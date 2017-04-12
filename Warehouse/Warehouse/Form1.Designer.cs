@@ -125,6 +125,7 @@
             this.注册供应商ToolStripMenuItem.Name = "注册供应商ToolStripMenuItem";
             this.注册供应商ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册供应商ToolStripMenuItem.Text = "注册供应商";
+            this.注册供应商ToolStripMenuItem.Click += new System.EventHandler(this.注册供应商ToolStripMenuItem_Click);
             // 
             // 添加新仓库信息ToolStripMenuItem
             // 

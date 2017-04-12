@@ -10,19 +10,11 @@ using System.Windows.Forms;
 
 namespace Warehouse
 {
-    public partial class Form1 : Form
+    public partial class FrmSupplier : Form
     {
-        public Form1()
+        public FrmSupplier()
         {
             InitializeComponent();
-        }
-
-        private void 注册供应商ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAdmin f = new FrmAdmin();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
         }
     }
 }
