@@ -46,16 +46,62 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmSelectAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectAdmin.Designer.cs">
+      <DependentUpon>FrmSelectAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouse.Designer.cs">
+      <DependentUpon>FrmWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouseAdd.Designer.cs">
+      <DependentUpon>FrmWarehouseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouseDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouseDelete.Designer.cs">
+      <DependentUpon>FrmWarehouseDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouseUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouseUpdate.Designer.cs">
+      <DependentUpon>FrmWarehouseUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectAdmin.resx">
+      <DependentUpon>FrmSelectAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouse.resx">
+      <DependentUpon>FrmWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouseAdd.resx">
+      <DependentUpon>FrmWarehouseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouseDelete.resx">
+      <DependentUpon>FrmWarehouseDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouseUpdate.resx">
+      <DependentUpon>FrmWarehouseUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

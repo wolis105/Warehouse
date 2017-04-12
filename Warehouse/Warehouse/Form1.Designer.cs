@@ -35,10 +35,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.注册仓库管理员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.注册店员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册供应商ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.添加新仓库信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWarehouse = new System.Windows.Forms.ToolStripMenuItem();
             this.添加新店面信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -92,7 +92,7 @@
             // 
             this.菜单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.注册用户ToolStripMenuItem,
-            this.添加新仓库信息ToolStripMenuItem,
+            this.tsmiWarehouse,
             this.添加新店面信息ToolStripMenuItem});
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
             this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
@@ -101,18 +101,18 @@
             // 注册用户ToolStripMenuItem
             // 
             this.注册用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.注册仓库管理员ToolStripMenuItem,
+            this.tsmiRegister,
             this.注册店员ToolStripMenuItem,
             this.注册供应商ToolStripMenuItem});
             this.注册用户ToolStripMenuItem.Name = "注册用户ToolStripMenuItem";
             this.注册用户ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册用户ToolStripMenuItem.Text = "注册用户";
             // 
-            // 注册仓库管理员ToolStripMenuItem
+            // tsmiRegister
             // 
-            this.注册仓库管理员ToolStripMenuItem.Name = "注册仓库管理员ToolStripMenuItem";
-            this.注册仓库管理员ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.注册仓库管理员ToolStripMenuItem.Text = "注册仓库管理员";
+            this.tsmiRegister.Name = "tsmiRegister";
+            this.tsmiRegister.Size = new System.Drawing.Size(160, 22);
+            this.tsmiRegister.Text = "注册仓库管理员";
             // 
             // 注册店员ToolStripMenuItem
             // 
@@ -126,11 +126,11 @@
             this.注册供应商ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册供应商ToolStripMenuItem.Text = "注册供应商";
             // 
-            // 添加新仓库信息ToolStripMenuItem
+            // tsmiWarehouse
             // 
-            this.添加新仓库信息ToolStripMenuItem.Name = "添加新仓库信息ToolStripMenuItem";
-            this.添加新仓库信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.添加新仓库信息ToolStripMenuItem.Text = "添加新仓库信息";
+            this.tsmiWarehouse.Name = "tsmiWarehouse";
+            this.tsmiWarehouse.Size = new System.Drawing.Size(160, 22);
+            this.tsmiWarehouse.Text = "添加新仓库信息";
             // 
             // 添加新店面信息ToolStripMenuItem
             // 
@@ -167,10 +167,10 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 菜单ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 注册用户ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 注册仓库管理员ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRegister;
         private System.Windows.Forms.ToolStripMenuItem 注册店员ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 注册供应商ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加新仓库信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiWarehouse;
         private System.Windows.Forms.ToolStripMenuItem 添加新店面信息ToolStripMenuItem;
     }
 }
