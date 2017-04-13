@@ -24,5 +24,30 @@ namespace Warehouse
             f.ShowDialog();
             this.Show();
         }
+
+        private void FrmExtractDetail_Load(object sender, EventArgs e)
+        {
+            string goodsName = this.cboGdName.Text;
+            if(goodsName=="查询所有")
+            {
+                goodsName = "";
+            }
+        }
+
+        private void tsmiRemove_Click(object sender, EventArgs e)
+        {
+            if(this.lvwSelectlist.SelectedItems.Count>0)
+            {
+                string guid = this.lvwSelectlist.SelectedItems[0].Text;
+                FrmRemove f = new FrmRemove(guid);
+                this.Hide();
+                f.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("您还没有选择！");
+            }
+        }
     }
 }

@@ -28,113 +28,53 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lblGdName = new System.Windows.Forms.Label();
-            this.lblGdUnit = new System.Windows.Forms.Label();
-            this.lblEDCount = new System.Windows.Forms.Label();
-            this.lblGdType = new System.Windows.Forms.Label();
-            this.lblGdSpecification = new System.Windows.Forms.Label();
             this.cboGdName = new System.Windows.Forms.ComboBox();
-            this.txtGdUnit = new System.Windows.Forms.TextBox();
-            this.txtEDCount = new System.Windows.Forms.TextBox();
-            this.txtGdType = new System.Windows.Forms.TextBox();
-            this.txtGdSpecification = new System.Windows.Forms.TextBox();
             this.btnExtract = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.lblShName = new System.Windows.Forms.Label();
+            this.cboShName = new System.Windows.Forms.ComboBox();
+            this.lblTime = new System.Windows.Forms.Label();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
+            this.lblNumber = new System.Windows.Forms.Label();
+            this.txtNumber = new System.Windows.Forms.TextBox();
+            this.errMistake = new System.Windows.Forms.ErrorProvider(this.components);
+            this.lblWHouse = new System.Windows.Forms.Label();
+            this.cboWhName = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.errMistake)).BeginInit();
             this.SuspendLayout();
             // 
             // lblGdName
             // 
             this.lblGdName.AutoSize = true;
-            this.lblGdName.Location = new System.Drawing.Point(67, 43);
+            this.lblGdName.Location = new System.Drawing.Point(48, 43);
             this.lblGdName.Name = "lblGdName";
             this.lblGdName.Size = new System.Drawing.Size(41, 12);
             this.lblGdName.TabIndex = 0;
             this.lblGdName.Text = "商品名";
             // 
-            // lblGdUnit
-            // 
-            this.lblGdUnit.AutoSize = true;
-            this.lblGdUnit.Location = new System.Drawing.Point(67, 112);
-            this.lblGdUnit.Name = "lblGdUnit";
-            this.lblGdUnit.Size = new System.Drawing.Size(53, 12);
-            this.lblGdUnit.TabIndex = 1;
-            this.lblGdUnit.Text = "商品单位";
-            // 
-            // lblEDCount
-            // 
-            this.lblEDCount.AutoSize = true;
-            this.lblEDCount.Location = new System.Drawing.Point(67, 181);
-            this.lblEDCount.Name = "lblEDCount";
-            this.lblEDCount.Size = new System.Drawing.Size(53, 12);
-            this.lblEDCount.TabIndex = 2;
-            this.lblEDCount.Text = "提货数量";
-            // 
-            // lblGdType
-            // 
-            this.lblGdType.AutoSize = true;
-            this.lblGdType.Location = new System.Drawing.Point(67, 250);
-            this.lblGdType.Name = "lblGdType";
-            this.lblGdType.Size = new System.Drawing.Size(53, 12);
-            this.lblGdType.TabIndex = 3;
-            this.lblGdType.Text = "商品类型";
-            // 
-            // lblGdSpecification
-            // 
-            this.lblGdSpecification.AutoSize = true;
-            this.lblGdSpecification.Location = new System.Drawing.Point(67, 319);
-            this.lblGdSpecification.Name = "lblGdSpecification";
-            this.lblGdSpecification.Size = new System.Drawing.Size(53, 12);
-            this.lblGdSpecification.TabIndex = 4;
-            this.lblGdSpecification.Text = "商品规格";
-            // 
             // cboGdName
             // 
             this.cboGdName.FormattingEnabled = true;
-            this.cboGdName.Location = new System.Drawing.Point(142, 40);
+            this.cboGdName.Location = new System.Drawing.Point(142, 35);
             this.cboGdName.Name = "cboGdName";
-            this.cboGdName.Size = new System.Drawing.Size(133, 20);
+            this.cboGdName.Size = new System.Drawing.Size(200, 20);
             this.cboGdName.TabIndex = 5;
-            // 
-            // txtGdUnit
-            // 
-            this.txtGdUnit.Location = new System.Drawing.Point(142, 103);
-            this.txtGdUnit.Name = "txtGdUnit";
-            this.txtGdUnit.Size = new System.Drawing.Size(133, 21);
-            this.txtGdUnit.TabIndex = 6;
-            // 
-            // txtEDCount
-            // 
-            this.txtEDCount.Location = new System.Drawing.Point(142, 172);
-            this.txtEDCount.Name = "txtEDCount";
-            this.txtEDCount.Size = new System.Drawing.Size(133, 21);
-            this.txtEDCount.TabIndex = 7;
-            // 
-            // txtGdType
-            // 
-            this.txtGdType.Location = new System.Drawing.Point(142, 241);
-            this.txtGdType.Name = "txtGdType";
-            this.txtGdType.Size = new System.Drawing.Size(133, 21);
-            this.txtGdType.TabIndex = 8;
-            // 
-            // txtGdSpecification
-            // 
-            this.txtGdSpecification.Location = new System.Drawing.Point(142, 310);
-            this.txtGdSpecification.Name = "txtGdSpecification";
-            this.txtGdSpecification.Size = new System.Drawing.Size(133, 21);
-            this.txtGdSpecification.TabIndex = 9;
             // 
             // btnExtract
             // 
-            this.btnExtract.Location = new System.Drawing.Point(200, 389);
+            this.btnExtract.Location = new System.Drawing.Point(267, 419);
             this.btnExtract.Name = "btnExtract";
             this.btnExtract.Size = new System.Drawing.Size(75, 23);
             this.btnExtract.TabIndex = 10;
             this.btnExtract.Text = "提货";
             this.btnExtract.UseVisualStyleBackColor = true;
+            this.btnExtract.Click += new System.EventHandler(this.btnExtract_Click);
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(69, 389);
+            this.btnClose.Location = new System.Drawing.Point(50, 419);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 11;
@@ -142,25 +82,97 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // lblShName
+            // 
+            this.lblShName.AutoSize = true;
+            this.lblShName.Location = new System.Drawing.Point(48, 114);
+            this.lblShName.Name = "lblShName";
+            this.lblShName.Size = new System.Drawing.Size(53, 12);
+            this.lblShName.TabIndex = 12;
+            this.lblShName.Text = "提货店面";
+            // 
+            // cboShName
+            // 
+            this.cboShName.FormattingEnabled = true;
+            this.cboShName.Location = new System.Drawing.Point(142, 106);
+            this.cboShName.Name = "cboShName";
+            this.cboShName.Size = new System.Drawing.Size(200, 20);
+            this.cboShName.TabIndex = 13;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.Location = new System.Drawing.Point(48, 195);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(53, 12);
+            this.lblTime.TabIndex = 14;
+            this.lblTime.Text = "提货日期";
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.Location = new System.Drawing.Point(142, 186);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(200, 21);
+            this.dtpTime.TabIndex = 15;
+            // 
+            // lblNumber
+            // 
+            this.lblNumber.AutoSize = true;
+            this.lblNumber.Location = new System.Drawing.Point(48, 280);
+            this.lblNumber.Name = "lblNumber";
+            this.lblNumber.Size = new System.Drawing.Size(53, 12);
+            this.lblNumber.TabIndex = 16;
+            this.lblNumber.Text = "提货数量";
+            // 
+            // txtNumber
+            // 
+            this.txtNumber.Location = new System.Drawing.Point(142, 271);
+            this.txtNumber.Name = "txtNumber";
+            this.txtNumber.Size = new System.Drawing.Size(200, 21);
+            this.txtNumber.TabIndex = 17;
+            // 
+            // errMistake
+            // 
+            this.errMistake.ContainerControl = this;
+            // 
+            // lblWHouse
+            // 
+            this.lblWHouse.AutoSize = true;
+            this.lblWHouse.Location = new System.Drawing.Point(48, 360);
+            this.lblWHouse.Name = "lblWHouse";
+            this.lblWHouse.Size = new System.Drawing.Size(53, 12);
+            this.lblWHouse.TabIndex = 18;
+            this.lblWHouse.Text = "提货仓库";
+            // 
+            // cboWhName
+            // 
+            this.cboWhName.FormattingEnabled = true;
+            this.cboWhName.Location = new System.Drawing.Point(142, 352);
+            this.cboWhName.Name = "cboWhName";
+            this.cboWhName.Size = new System.Drawing.Size(200, 20);
+            this.cboWhName.TabIndex = 19;
+            // 
             // FrmExtract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(368, 480);
+            this.ClientSize = new System.Drawing.Size(368, 561);
+            this.Controls.Add(this.cboWhName);
+            this.Controls.Add(this.lblWHouse);
+            this.Controls.Add(this.txtNumber);
+            this.Controls.Add(this.lblNumber);
+            this.Controls.Add(this.dtpTime);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.cboShName);
+            this.Controls.Add(this.lblShName);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExtract);
-            this.Controls.Add(this.txtGdSpecification);
-            this.Controls.Add(this.txtGdType);
-            this.Controls.Add(this.txtEDCount);
-            this.Controls.Add(this.txtGdUnit);
             this.Controls.Add(this.cboGdName);
-            this.Controls.Add(this.lblGdSpecification);
-            this.Controls.Add(this.lblGdType);
-            this.Controls.Add(this.lblEDCount);
-            this.Controls.Add(this.lblGdUnit);
             this.Controls.Add(this.lblGdName);
             this.Name = "FrmExtract";
             this.Text = "提货单界面";
+            this.Load += new System.EventHandler(this.FrmExtract_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errMistake)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,16 +181,17 @@
         #endregion
 
         private System.Windows.Forms.Label lblGdName;
-        private System.Windows.Forms.Label lblGdUnit;
-        private System.Windows.Forms.Label lblEDCount;
-        private System.Windows.Forms.Label lblGdType;
-        private System.Windows.Forms.Label lblGdSpecification;
         private System.Windows.Forms.ComboBox cboGdName;
-        private System.Windows.Forms.TextBox txtGdUnit;
-        private System.Windows.Forms.TextBox txtEDCount;
-        private System.Windows.Forms.TextBox txtGdType;
-        private System.Windows.Forms.TextBox txtGdSpecification;
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Label lblShName;
+        private System.Windows.Forms.ComboBox cboShName;
+        private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.DateTimePicker dtpTime;
+        private System.Windows.Forms.Label lblNumber;
+        private System.Windows.Forms.TextBox txtNumber;
+        private System.Windows.Forms.ErrorProvider errMistake;
+        private System.Windows.Forms.ComboBox cboWhName;
+        private System.Windows.Forms.Label lblWHouse;
     }
 }
