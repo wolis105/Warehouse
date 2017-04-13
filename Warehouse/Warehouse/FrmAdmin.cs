@@ -80,5 +80,10 @@ namespace Warehouse
                 }
             }
         }
+
+        private void FrmAdmin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

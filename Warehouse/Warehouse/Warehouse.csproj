@@ -64,6 +64,12 @@
     <Compile Include="FrmSupplier.Designer.cs">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateDl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateDl.Designer.cs">
+      <DependentUpon>FrmUpdateDl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -74,6 +80,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupplier.resx">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateDl.resx">
+      <DependentUpon>FrmUpdateDl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

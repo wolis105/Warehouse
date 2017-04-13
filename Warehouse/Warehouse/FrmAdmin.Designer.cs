@@ -167,6 +167,7 @@
             this.Controls.Add(this.lblID);
             this.Name = "FrmAdmin";
             this.Text = "注册";
+            this.Load += new System.EventHandler(this.FrmAdmin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
