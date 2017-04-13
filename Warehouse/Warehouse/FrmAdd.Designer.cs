@@ -44,15 +44,16 @@
             // cboGoodsName
             // 
             this.cboGoodsName.FormattingEnabled = true;
-            this.cboGoodsName.Location = new System.Drawing.Point(137, 81);
+            this.cboGoodsName.Location = new System.Drawing.Point(123, 53);
             this.cboGoodsName.Name = "cboGoodsName";
             this.cboGoodsName.Size = new System.Drawing.Size(121, 20);
             this.cboGoodsName.TabIndex = 0;
+            this.cboGoodsName.TextChanged += new System.EventHandler(this.cboGoodsName_TextChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 84);
+            this.label1.Location = new System.Drawing.Point(29, 56);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 1;
@@ -60,7 +61,7 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(137, 134);
+            this.txtNumber.Location = new System.Drawing.Point(123, 106);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(121, 21);
             this.txtNumber.TabIndex = 2;
@@ -68,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 137);
+            this.label2.Location = new System.Drawing.Point(29, 109);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 4;
@@ -76,7 +77,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(101, 190);
+            this.btnAdd.Location = new System.Drawing.Point(87, 162);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 5;
@@ -94,7 +95,7 @@
             this.入库明细ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(291, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(267, 25);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -103,12 +104,13 @@
             this.入库明细ToolStripMenuItem.Name = "入库明细ToolStripMenuItem";
             this.入库明细ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
             this.入库明细ToolStripMenuItem.Text = "入库明细";
+            this.入库明细ToolStripMenuItem.Click += new System.EventHandler(this.入库明细ToolStripMenuItem_Click);
             // 
             // FrmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(291, 241);
+            this.ClientSize = new System.Drawing.Size(267, 264);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNumber);
@@ -117,7 +119,7 @@
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmAdd";
-            this.Text = "FrmAdd";
+            this.Text = "商品入库";
             this.Load += new System.EventHandler(this.FrmAdd_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.menuStrip1.ResumeLayout(false);

@@ -19,6 +19,7 @@ namespace Warehouse
         }
 
         private string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
+        private bool flag = false;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -51,6 +52,12 @@ namespace Warehouse
                 + "values(@RID,@PcDate,@WhID)"
                 + "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
                 + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
+
+            if (flag)
+            {
+                strSQL = "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
+                + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
+            }
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -95,8 +102,37 @@ namespace Warehouse
                     string gdName = reader.GetString(reader.GetOrdinal("GdName"));
                     this.cboGoodsName.Items.Add(gdName);
                 }
+                reader.Close();
 
                 con.Close();
+            }
+        }
+
+        private void 入库明细ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAddDetail frm = new FrmAddDetail();
+            frm.Size = this.Size;
+            frm.Location = this.Location;
+            this.Hide();
+            frm.ShowDialog();
+            frm.Activate();
+            this.Location = frm.Location;
+            this.Show();
+        }
+
+        private void cboGoodsName_TextChanged(object sender, EventArgs e)
+        {
+            for (int i = 0; i < this.cboGoodsName.Items.Count; i++)
+            {
+                if (this.cboGoodsName.Items[i].ToString() == this.cboGoodsName.Text.Trim())
+                {
+                    flag = true;
+                    break;
+                }
+                else
+                {
+                    flag = false;
+                }
             }
         }
     }
