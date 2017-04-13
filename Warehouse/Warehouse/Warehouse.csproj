@@ -52,28 +52,46 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAdmin.cs">
+    <Compile Include="FrmExtract.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAdmin.Designer.cs">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    <Compile Include="FrmExtract.Designer.cs">
+      <DependentUpon>FrmExtract.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmSupplier.cs">
+    <Compile Include="FrmQuery_Shop.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmSupplier.Designer.cs">
-      <DependentUpon>FrmSupplier.cs</DependentUpon>
+    <Compile Include="FrmQuery_Shop.Designer.cs">
+      <DependentUpon>FrmQuery_Shop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSales.Designer.cs">
+      <DependentUpon>FrmSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShop.Designer.cs">
+      <DependentUpon>FrmShop.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAdmin.resx">
-      <DependentUpon>FrmAdmin.cs</DependentUpon>
+    <EmbeddedResource Include="FrmExtract.resx">
+      <DependentUpon>FrmExtract.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmSupplier.resx">
-      <DependentUpon>FrmSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="FrmQuery_Shop.resx">
+      <DependentUpon>FrmQuery_Shop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSales.resx">
+      <DependentUpon>FrmSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShop.resx">
+      <DependentUpon>FrmShop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

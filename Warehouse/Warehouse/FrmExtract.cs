@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Warehouse
 {
-    public partial class FrmSupplier : Form
+    public partial class FrmExtract : Form
     {
-        public FrmSupplier()
+        public FrmExtract()
         {
             InitializeComponent();
         }

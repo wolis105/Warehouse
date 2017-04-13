@@ -19,10 +19,17 @@ namespace Warehouse
 
         private void 注册供应商ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FrmAdmin f = new FrmAdmin();
-            this.Hide();
-            f.ShowDialog();
-            this.Show();
+           
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
