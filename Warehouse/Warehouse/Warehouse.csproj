@@ -76,6 +76,18 @@
     <Compile Include="FrmShop.Designer.cs">
       <DependentUpon>FrmShop.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmShopInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShopInformation.Designer.cs">
+      <DependentUpon>FrmShopInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdate_Pwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdate_Pwd.Designer.cs">
+      <DependentUpon>FrmUpdate_Pwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -92,6 +104,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmShop.resx">
       <DependentUpon>FrmShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShopInformation.resx">
+      <DependentUpon>FrmShopInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdate_Pwd.resx">
+      <DependentUpon>FrmUpdate_Pwd.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
