@@ -27,26 +27,15 @@ namespace Warehouse
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string strSQL = "update Deliver  set   where SpID=@SpID";
+            string strSQL = "update Deliver  set DlID=@DlID,DlCount=@DlCount  where SpID=@SpID";
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(strSQL, con);
+
                 cmd.Parameters.AddWithValue("@GdName", cboName.Text.Trim());
                 //差一行参数
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string gName = reader.GetString(reader.GetOrdinal("GdName"));
-                    int count = reader.GetInt32(reader.GetOrdinal("DlCount"));
-                    string id = reader.GetString(reader.GetOrdinal("DlID"));
-                    ListViewItem list = new ListViewItem(gName);
-                    list.SubItems.Add(count.ToString());
-                    list.Tag = id;
-                    lvwShow.Items.Add(list);
-
-                }
-                reader.Close();
+               
                 con.Close();
             }
         }

@@ -45,6 +45,7 @@ namespace Warehouse
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+
             string   strSQL = "select * from Deliver d left join Goods g on d.GdID=g.GdID where (charIndex('@GdName',@GdName)>0 or len(@GdName)=0 )and SpID=@SpID";
             using (SqlConnection con = new SqlConnection(strCon))
             {
