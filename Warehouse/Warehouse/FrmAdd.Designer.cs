@@ -37,12 +37,16 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.入库明细ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.货物信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.入库明细ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.新建入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cboGoodsName
             // 
+            this.cboGoodsName.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboGoodsName.FormattingEnabled = true;
             this.cboGoodsName.Location = new System.Drawing.Point(123, 53);
             this.cboGoodsName.Name = "cboGoodsName";
@@ -77,7 +81,7 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(87, 162);
+            this.btnAdd.Location = new System.Drawing.Point(90, 165);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 5;
@@ -92,7 +96,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.入库明细ToolStripMenuItem});
+            this.入库明细ToolStripMenuItem,
+            this.货物信息ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(267, 25);
@@ -101,10 +106,33 @@
             // 
             // 入库明细ToolStripMenuItem
             // 
+            this.入库明细ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.入库明细ToolStripMenuItem1,
+            this.新建入库单ToolStripMenuItem});
             this.入库明细ToolStripMenuItem.Name = "入库明细ToolStripMenuItem";
-            this.入库明细ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.入库明细ToolStripMenuItem.Text = "入库明细";
-            this.入库明细ToolStripMenuItem.Click += new System.EventHandler(this.入库明细ToolStripMenuItem_Click);
+            this.入库明细ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.入库明细ToolStripMenuItem.Text = "菜单";
+            // 
+            // 货物信息ToolStripMenuItem
+            // 
+            this.货物信息ToolStripMenuItem.Name = "货物信息ToolStripMenuItem";
+            this.货物信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.货物信息ToolStripMenuItem.Text = "货物信息";
+            this.货物信息ToolStripMenuItem.Click += new System.EventHandler(this.货物信息ToolStripMenuItem_Click);
+            // 
+            // 入库明细ToolStripMenuItem1
+            // 
+            this.入库明细ToolStripMenuItem1.Name = "入库明细ToolStripMenuItem1";
+            this.入库明细ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.入库明细ToolStripMenuItem1.Text = "入库明细";
+            this.入库明细ToolStripMenuItem1.Click += new System.EventHandler(this.入库明细ToolStripMenuItem1_Click);
+            // 
+            // 新建入库单ToolStripMenuItem
+            // 
+            this.新建入库单ToolStripMenuItem.Name = "新建入库单ToolStripMenuItem";
+            this.新建入库单ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.新建入库单ToolStripMenuItem.Text = "新建入库单";
+            this.新建入库单ToolStripMenuItem.Click += new System.EventHandler(this.新建入库单ToolStripMenuItem_Click);
             // 
             // FrmAdd
             // 
@@ -139,5 +167,8 @@
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 入库明细ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 货物信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 入库明细ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 新建入库单ToolStripMenuItem;
     }
 }

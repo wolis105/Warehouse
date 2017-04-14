@@ -21,6 +21,11 @@ namespace Warehouse
         private string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
         private bool flag = false;
 
+        /// <summary>
+        /// 商品入库到仓库
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnAdd_Click(object sender, EventArgs e)
         {
             string goodsName = this.cboGoodsName.Text;
@@ -53,11 +58,11 @@ namespace Warehouse
                 + "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
                 + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
 
-            if (flag)
-            {
-                strSQL = "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
-                + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
-            }
+            //if (flag)
+            //{
+            //    strSQL = "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
+            //    + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
+            //}
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -76,6 +81,8 @@ namespace Warehouse
                 if (rows > 0)
                 {
                     MessageBox.Show("入库成功！");
+                    string str = DateTime.Now.ToString();
+                    FrmAddLook frm = new FrmAddLook(str);
                 }
                 else
                 {
@@ -86,6 +93,11 @@ namespace Warehouse
             }
         }
 
+        /// <summary>
+        /// 提取供应商提供所有商品的商品名
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAdd_Load(object sender, EventArgs e)
         {
             string strSQL = "select GdName from Goods";
@@ -107,19 +119,12 @@ namespace Warehouse
                 con.Close();
             }
         }
-
-        private void 入库明细ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FrmAddDetail frm = new FrmAddDetail();
-            frm.Size = this.Size;
-            frm.Location = this.Location;
-            this.Hide();
-            frm.ShowDialog();
-            frm.Activate();
-            this.Location = frm.Location;
-            this.Show();
-        }
-
+        
+        /// <summary>
+        /// 查找该仓库中是否存在相同的商品名
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cboGoodsName_TextChanged(object sender, EventArgs e)
         {
             for (int i = 0; i < this.cboGoodsName.Items.Count; i++)
@@ -134,6 +139,46 @@ namespace Warehouse
                     flag = false;
                 }
             }
+        }
+
+        private void 货物信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmGoodsSelect frm = new FrmGoodsSelect();
+            frm.Size = this.Size;
+            frm.Location = this.Location;
+            this.Hide();
+            frm.ShowDialog();
+            frm.Activate();
+            this.Location = frm.Location;
+            this.Show();
+        }
+        
+        /// <summary>
+        /// 查看货物入库明细
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 入库明细ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmAddDetail frm = new FrmAddDetail();
+            frm.Size = this.Size;
+            frm.Location = this.Location;
+            this.Hide();
+            frm.ShowDialog();
+            frm.Activate();
+            this.Location = frm.Location;
+            this.Show();
+        }
+
+        private void 新建入库单ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPurchase frm = new FrmPurchase();
+            frm.Location = this.Location;
+            this.Hide();
+            frm.ShowDialog();
+            frm.Activate();
+            this.Location = frm.Location;
+            this.Show();
         }
     }
 }

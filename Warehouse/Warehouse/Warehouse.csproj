@@ -70,6 +70,24 @@
     <Compile Include="FrmAddLook.Designer.cs">
       <DependentUpon>FrmAddLook.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGoodsSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodsSelect.Designer.cs">
+      <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGoodsSelectLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodsSelectLook.Designer.cs">
+      <DependentUpon>FrmGoodsSelectLook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchase.Designer.cs">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -83,6 +101,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddLook.resx">
       <DependentUpon>FrmAddLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodsSelect.resx">
+      <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodsSelectLook.resx">
+      <DependentUpon>FrmGoodsSelectLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchase.resx">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

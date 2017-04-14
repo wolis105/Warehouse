@@ -18,6 +18,11 @@ namespace Warehouse
             InitializeComponent();
         }
 
+        /// <summary>
+        /// 提取入库明细
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmAddDetail_Load(object sender, EventArgs e)
         {
             string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
@@ -50,13 +55,17 @@ namespace Warehouse
             }
         }
 
+        /// <summary>
+        /// 打开入库明细详情
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             string str = this.listView1.SelectedItems[0].Text;
             string str1 = this.listView1.SelectedItems[0].SubItems[2].Text;
-            string str2 = this.listView1.SelectedItems[0].SubItems[1].Text;
             string rid = Convert.ToString(this.listView1.SelectedItems[0].Tag);
-            FrmAddLook frm = new FrmAddLook(str, str1, str2,rid);
+            FrmAddLook frm = new FrmAddLook(str, str1,rid);
             frm.Size = this.Size;
             frm.Location = this.Location;
             this.Hide();
