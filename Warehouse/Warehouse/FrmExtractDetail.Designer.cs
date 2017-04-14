@@ -38,17 +38,19 @@
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cmsControl = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
             this.btnQuery = new System.Windows.Forms.Button();
-            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnClose = new System.Windows.Forms.Button();
             this.cmsControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExtract
             // 
-            this.btnExtract.Location = new System.Drawing.Point(379, 30);
+            this.btnExtract.Location = new System.Drawing.Point(462, 35);
             this.btnExtract.Name = "btnExtract";
             this.btnExtract.Size = new System.Drawing.Size(75, 29);
             this.btnExtract.TabIndex = 0;
@@ -84,21 +86,22 @@
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6,
-            this.columnHeader7});
+            this.columnHeader7,
+            this.columnHeader8});
             this.lvwSelectlist.ContextMenuStrip = this.cmsControl;
             this.lvwSelectlist.FullRowSelect = true;
             this.lvwSelectlist.GridLines = true;
-            this.lvwSelectlist.Location = new System.Drawing.Point(12, 159);
+            this.lvwSelectlist.Location = new System.Drawing.Point(14, 159);
             this.lvwSelectlist.Name = "lvwSelectlist";
-            this.lvwSelectlist.Size = new System.Drawing.Size(442, 299);
+            this.lvwSelectlist.Size = new System.Drawing.Size(533, 299);
             this.lvwSelectlist.TabIndex = 3;
             this.lvwSelectlist.UseCompatibleStateImageBehavior = false;
             this.lvwSelectlist.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "提货单编号";
-            this.columnHeader1.Width = 78;
+            this.columnHeader1.Text = "提货明细单编号";
+            this.columnHeader1.Width = 97;
             // 
             // columnHeader2
             // 
@@ -116,6 +119,14 @@
             // 
             this.columnHeader5.Text = "提货店面";
             // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "商品类型";
+            // 
+            // columnHeader7
+            // 
+            this.columnHeader7.Text = "商品规格";
+            // 
             // cmsControl
             // 
             this.cmsControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -126,32 +137,41 @@
             // tsmiRemove
             // 
             this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(152, 22);
+            this.tsmiRemove.Size = new System.Drawing.Size(136, 22);
             this.tsmiRemove.Text = "删除提货单";
             this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
             // 
             // btnQuery
             // 
-            this.btnQuery.Location = new System.Drawing.Point(379, 98);
+            this.btnQuery.Location = new System.Drawing.Point(462, 103);
             this.btnQuery.Name = "btnQuery";
             this.btnQuery.Size = new System.Drawing.Size(75, 29);
             this.btnQuery.TabIndex = 5;
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = true;
+            this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
             // 
-            // columnHeader6
+            // columnHeader8
             // 
-            this.columnHeader6.Text = "商品类型";
+            this.columnHeader8.Text = "提货仓库名";
+            this.columnHeader8.Width = 81;
             // 
-            // columnHeader7
+            // btnClose
             // 
-            this.columnHeader7.Text = "商品规格";
+            this.btnClose.Location = new System.Drawing.Point(14, 103);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(75, 29);
+            this.btnClose.TabIndex = 6;
+            this.btnClose.Text = "退出";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // FrmExtractDetail
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(466, 470);
+            this.ClientSize = new System.Drawing.Size(550, 470);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnQuery);
             this.Controls.Add(this.lvwSelectlist);
             this.Controls.Add(this.lblGdName);
@@ -182,5 +202,7 @@
         private System.Windows.Forms.Button btnQuery;
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.ColumnHeader columnHeader7;
+        private System.Windows.Forms.ColumnHeader columnHeader8;
+        private System.Windows.Forms.Button btnClose;
     }
 }

@@ -26,22 +26,7 @@ namespace Warehouse
 
         private void FrmExtract_Load(object sender, EventArgs e)
         {
-            string strSQL = "select ShName from Shop";
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string shName = reader.GetString(reader.GetOrdinal("ShName"));
-                    this.cboShName.Items.Add(shName);
-                }
-                reader.Close();
-
-                con.Close();
-            }
-            strSQL = "select GdName from Goods";
+            string strSQL = "select GdName from Goods";
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 SqlCommand cmd = new SqlCommand(strSQL, con);
@@ -51,21 +36,6 @@ namespace Warehouse
                 {
                     string gdName = reader.GetString(reader.GetOrdinal("GdName"));
                     this.cboGdName.Items.Add(gdName);
-                }
-                reader.Close();
-
-                con.Close();
-            }
-            strSQL = "select WhName from Warehouse";
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                con.Open();
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string whName = reader.GetString(reader.GetOrdinal("WhName"));
-                    this.cboWhName.Items.Add(whName);
                 }
                 reader.Close();
 
@@ -84,8 +54,8 @@ namespace Warehouse
 
             string etID = Guid.NewGuid().ToString();
             DateTime etDate =Convert.ToDateTime( this.dtpTime.Text.Trim());
-            string whName = this.cboWhName.Text.Trim();
-            string shName = this.cboShName.Text.Trim();
+            string whName = this.txtWHouse.Text.Trim();
+            string shName = this.txtShName.Text.Trim();
             string edID = Guid.NewGuid().ToString();
             int edCount =Convert.ToInt32(this.txtNumber.Text.Trim());
             string gdName = this.cboGdName.Text.Trim();
@@ -118,6 +88,44 @@ namespace Warehouse
             }
             this.Close();
 
+        }
+
+        private void cboGdName_TextChanged(object sender, EventArgs e)
+        {
+            string strSQL = "sp_SelectOne";
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string shName = reader.GetString(reader.GetOrdinal("ShName"));
+
+                    txtShName.Text = shName;
+                }
+                con.Close();
+            }
+            strSQL = "sp_SelectOnly";
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
+                con.Open();
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string whName = reader.GetString(reader.GetOrdinal("WhName"));
+                    
+                    txtWHouse.Text = whName;
+                }
+                con.Close();
+            }
         }
     }
 }

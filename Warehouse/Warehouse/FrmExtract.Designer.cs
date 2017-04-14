@@ -34,14 +34,14 @@
             this.btnExtract = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.lblShName = new System.Windows.Forms.Label();
-            this.cboShName = new System.Windows.Forms.ComboBox();
             this.lblTime = new System.Windows.Forms.Label();
             this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.lblNumber = new System.Windows.Forms.Label();
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.errMistake = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblWHouse = new System.Windows.Forms.Label();
-            this.cboWhName = new System.Windows.Forms.ComboBox();
+            this.txtShName = new System.Windows.Forms.TextBox();
+            this.txtWHouse = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errMistake)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,7 @@
             this.cboGdName.Name = "cboGdName";
             this.cboGdName.Size = new System.Drawing.Size(200, 20);
             this.cboGdName.TabIndex = 5;
+            this.cboGdName.TextChanged += new System.EventHandler(this.cboGdName_TextChanged);
             // 
             // btnExtract
             // 
@@ -90,14 +91,6 @@
             this.lblShName.Size = new System.Drawing.Size(53, 12);
             this.lblShName.TabIndex = 12;
             this.lblShName.Text = "提货店面";
-            // 
-            // cboShName
-            // 
-            this.cboShName.FormattingEnabled = true;
-            this.cboShName.Location = new System.Drawing.Point(142, 106);
-            this.cboShName.Name = "cboShName";
-            this.cboShName.Size = new System.Drawing.Size(200, 20);
-            this.cboShName.TabIndex = 13;
             // 
             // lblTime
             // 
@@ -144,26 +137,34 @@
             this.lblWHouse.TabIndex = 18;
             this.lblWHouse.Text = "提货仓库";
             // 
-            // cboWhName
+            // txtShName
             // 
-            this.cboWhName.FormattingEnabled = true;
-            this.cboWhName.Location = new System.Drawing.Point(142, 352);
-            this.cboWhName.Name = "cboWhName";
-            this.cboWhName.Size = new System.Drawing.Size(200, 20);
-            this.cboWhName.TabIndex = 19;
+            this.txtShName.Enabled = false;
+            this.txtShName.Location = new System.Drawing.Point(142, 114);
+            this.txtShName.Name = "txtShName";
+            this.txtShName.Size = new System.Drawing.Size(200, 21);
+            this.txtShName.TabIndex = 20;
+            // 
+            // txtWHouse
+            // 
+            this.txtWHouse.Enabled = false;
+            this.txtWHouse.Location = new System.Drawing.Point(142, 351);
+            this.txtWHouse.Name = "txtWHouse";
+            this.txtWHouse.Size = new System.Drawing.Size(200, 21);
+            this.txtWHouse.TabIndex = 21;
             // 
             // FrmExtract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 561);
-            this.Controls.Add(this.cboWhName);
+            this.Controls.Add(this.txtWHouse);
+            this.Controls.Add(this.txtShName);
             this.Controls.Add(this.lblWHouse);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblNumber);
             this.Controls.Add(this.dtpTime);
             this.Controls.Add(this.lblTime);
-            this.Controls.Add(this.cboShName);
             this.Controls.Add(this.lblShName);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnExtract);
@@ -185,13 +186,13 @@
         private System.Windows.Forms.Button btnExtract;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label lblShName;
-        private System.Windows.Forms.ComboBox cboShName;
         private System.Windows.Forms.Label lblTime;
         private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Label lblNumber;
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.ErrorProvider errMistake;
-        private System.Windows.Forms.ComboBox cboWhName;
         private System.Windows.Forms.Label lblWHouse;
+        private System.Windows.Forms.TextBox txtWHouse;
+        private System.Windows.Forms.TextBox txtShName;
     }
 }
