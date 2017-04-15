@@ -53,11 +53,35 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminAdd.Designer.cs">
+      <DependentUpon>FrmAdminAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminDelete.Designer.cs">
+      <DependentUpon>FrmAdminDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminUpdatePassword.Designer.cs">
+      <DependentUpon>FrmAdminUpdatePassword.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSelectAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSelectAdmin.Designer.cs">
       <DependentUpon>FrmSelectAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdate.Designer.cs">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmWarehouse.cs">
       <SubType>Form</SubType>
@@ -88,8 +112,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminAdd.resx">
+      <DependentUpon>FrmAdminAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminDelete.resx">
+      <DependentUpon>FrmAdminDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminUpdatePassword.resx">
+      <DependentUpon>FrmAdminUpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSelectAdmin.resx">
       <DependentUpon>FrmSelectAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdate.resx">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWarehouse.resx">
       <DependentUpon>FrmWarehouse.cs</DependentUpon>
@@ -126,7 +162,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="项目工具\SQLQuery存储过程.sql" />
     <Content Include="项目工具\仓库.sql" />
+    <Content Include="项目工具\团队作业SQL.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

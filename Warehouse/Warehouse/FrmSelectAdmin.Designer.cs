@@ -33,46 +33,159 @@
             this.tsmiUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdatePassword = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnSelect = new System.Windows.Forms.Button();
+            this.btnAddAdmin = new System.Windows.Forms.Button();
+            this.lblName = new System.Windows.Forms.Label();
+            this.lvwSelect = new System.Windows.Forms.ListView();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
             // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUpdate,
             this.tsmiDelete,
             this.tsmiUpdatePassword});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(161, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(190, 110);
             // 
             // tsmiUpdate
             // 
             this.tsmiUpdate.Name = "tsmiUpdate";
-            this.tsmiUpdate.Size = new System.Drawing.Size(160, 22);
+            this.tsmiUpdate.Size = new System.Drawing.Size(189, 26);
             this.tsmiUpdate.Text = "修改管理员信息";
+            this.tsmiUpdate.Click += new System.EventHandler(this.tsmiUpdate_Click);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(160, 22);
+            this.tsmiDelete.Size = new System.Drawing.Size(189, 26);
             this.tsmiDelete.Text = "删除管理员信息";
+            this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
             // tsmiUpdatePassword
             // 
             this.tsmiUpdatePassword.Name = "tsmiUpdatePassword";
-            this.tsmiUpdatePassword.Size = new System.Drawing.Size(160, 22);
+            this.tsmiUpdatePassword.Size = new System.Drawing.Size(189, 26);
             this.tsmiUpdatePassword.Text = "修改密码";
+            this.tsmiUpdatePassword.Click += new System.EventHandler(this.tsmiUpdatePassword_Click);
+            // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(589, 56);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
+            this.btnSelect.TabIndex = 1;
+            this.btnSelect.Text = "查询";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
+            // btnAddAdmin
+            // 
+            this.btnAddAdmin.Location = new System.Drawing.Point(589, 124);
+            this.btnAddAdmin.Name = "btnAddAdmin";
+            this.btnAddAdmin.Size = new System.Drawing.Size(75, 23);
+            this.btnAddAdmin.TabIndex = 2;
+            this.btnAddAdmin.Text = "新增管理员";
+            this.btnAddAdmin.UseVisualStyleBackColor = true;
+            this.btnAddAdmin.Click += new System.EventHandler(this.btnAddAdmin_Click);
+            // 
+            // lblName
+            // 
+            this.lblName.AutoSize = true;
+            this.lblName.Location = new System.Drawing.Point(28, 90);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(172, 15);
+            this.lblName.TabIndex = 3;
+            this.lblName.Text = "请输入你要查询的姓名：";
+            // 
+            // lvwSelect
+            // 
+            this.lvwSelect.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4,
+            this.columnHeader5,
+            this.columnHeader6});
+            this.lvwSelect.FullRowSelect = true;
+            this.lvwSelect.GridLines = true;
+            this.lvwSelect.Location = new System.Drawing.Point(-3, 191);
+            this.lvwSelect.Name = "lvwSelect";
+            this.lvwSelect.Size = new System.Drawing.Size(698, 364);
+            this.lvwSelect.TabIndex = 4;
+            this.lvwSelect.UseCompatibleStateImageBehavior = false;
+            this.lvwSelect.View = System.Windows.Forms.View.Details;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(206, 87);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(100, 25);
+            this.txtName.TabIndex = 5;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "用户名";
+            this.columnHeader1.Width = 139;
+            // 
+            // columnHeader2
+            // 
+            this.columnHeader2.Text = "管理员的姓名";
+            this.columnHeader2.Width = 198;
+            // 
+            // columnHeader3
+            // 
+            this.columnHeader3.Text = "管理员身份证";
+            this.columnHeader3.Width = 244;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "管理员性别";
+            this.columnHeader4.Width = 219;
+            // 
+            // columnHeader5
+            // 
+            this.columnHeader5.Text = "管理员电话";
+            this.columnHeader5.Width = 189;
+            // 
+            // columnHeader6
+            // 
+            this.columnHeader6.Text = "管理的仓库";
+            this.columnHeader6.Width = 158;
             // 
             // FrmWarehouseAdmin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(517, 447);
+            this.ClientSize = new System.Drawing.Size(689, 559);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.txtName);
+            this.Controls.Add(this.lvwSelect);
+            this.Controls.Add(this.lblName);
+            this.Controls.Add(this.btnAddAdmin);
+            this.Controls.Add(this.btnSelect);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmWarehouseAdmin";
             this.Text = "管理员增删查改界面";
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -82,5 +195,17 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiUpdate;
         private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
         private System.Windows.Forms.ToolStripMenuItem tsmiUpdatePassword;
+        private System.Windows.Forms.Button btnSelect;
+        private System.Windows.Forms.Button btnAddAdmin;
+        private System.Windows.Forms.Label lblName;
+        private System.Windows.Forms.ListView lvwSelect;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ColumnHeader columnHeader5;
+        private System.Windows.Forms.ColumnHeader columnHeader6;
     }
 }

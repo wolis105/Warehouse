@@ -16,5 +16,13 @@ namespace Warehouse
         {
             InitializeComponent();
         }
+
+        private void tsmiWarehouse_Click(object sender, EventArgs e)
+        {
+            FrmWarehouse f = new FrmWarehouse();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
