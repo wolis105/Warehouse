@@ -49,51 +49,58 @@
             // cboWarehouseName
             // 
             this.cboWarehouseName.FormattingEnabled = true;
-            this.cboWarehouseName.Location = new System.Drawing.Point(257, 319);
+            this.cboWarehouseName.Location = new System.Drawing.Point(193, 255);
+            this.cboWarehouseName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cboWarehouseName.Name = "cboWarehouseName";
-            this.cboWarehouseName.Size = new System.Drawing.Size(121, 23);
+            this.cboWarehouseName.Size = new System.Drawing.Size(92, 20);
             this.cboWarehouseName.TabIndex = 29;
             // 
             // txtPhonenumber
             // 
-            this.txtPhonenumber.Location = new System.Drawing.Point(257, 263);
+            this.txtPhonenumber.Location = new System.Drawing.Point(193, 210);
+            this.txtPhonenumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPhonenumber.Name = "txtPhonenumber";
-            this.txtPhonenumber.Size = new System.Drawing.Size(121, 25);
+            this.txtPhonenumber.Size = new System.Drawing.Size(92, 21);
             this.txtPhonenumber.TabIndex = 28;
             // 
             // txtSex
             // 
-            this.txtSex.Location = new System.Drawing.Point(257, 217);
+            this.txtSex.Location = new System.Drawing.Point(193, 174);
+            this.txtSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSex.Name = "txtSex";
-            this.txtSex.Size = new System.Drawing.Size(121, 25);
+            this.txtSex.Size = new System.Drawing.Size(92, 21);
             this.txtSex.TabIndex = 27;
             // 
             // txtCardID
             // 
-            this.txtCardID.Location = new System.Drawing.Point(257, 168);
+            this.txtCardID.Location = new System.Drawing.Point(193, 134);
+            this.txtCardID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCardID.Name = "txtCardID";
-            this.txtCardID.Size = new System.Drawing.Size(121, 25);
+            this.txtCardID.Size = new System.Drawing.Size(92, 21);
             this.txtCardID.TabIndex = 26;
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(257, 116);
+            this.txtName.Location = new System.Drawing.Point(193, 93);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(121, 25);
+            this.txtName.Size = new System.Drawing.Size(92, 21);
             this.txtName.TabIndex = 25;
             // 
             // txtLoginID
             // 
-            this.txtLoginID.Location = new System.Drawing.Point(257, 62);
+            this.txtLoginID.Location = new System.Drawing.Point(193, 50);
+            this.txtLoginID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLoginID.Name = "txtLoginID";
-            this.txtLoginID.Size = new System.Drawing.Size(121, 25);
+            this.txtLoginID.Size = new System.Drawing.Size(92, 21);
             this.txtLoginID.TabIndex = 23;
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(118, 395);
+            this.btnUpdate.Location = new System.Drawing.Point(88, 316);
+            this.btnUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(76, 18);
             this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "确认修改";
             this.btnUpdate.UseVisualStyleBackColor = true;
@@ -102,54 +109,60 @@
             // lblWarehouseName
             // 
             this.lblWarehouseName.AutoSize = true;
-            this.lblWarehouseName.Location = new System.Drawing.Point(88, 327);
+            this.lblWarehouseName.Location = new System.Drawing.Point(66, 262);
+            this.lblWarehouseName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblWarehouseName.Name = "lblWarehouseName";
-            this.lblWarehouseName.Size = new System.Drawing.Size(142, 15);
+            this.lblWarehouseName.Size = new System.Drawing.Size(113, 12);
             this.lblWarehouseName.TabIndex = 21;
             this.lblWarehouseName.Text = "所管理的仓库名称：";
             // 
             // lblPhonenumber
             // 
             this.lblPhonenumber.AutoSize = true;
-            this.lblPhonenumber.Location = new System.Drawing.Point(148, 273);
+            this.lblPhonenumber.Location = new System.Drawing.Point(111, 218);
+            this.lblPhonenumber.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPhonenumber.Name = "lblPhonenumber";
-            this.lblPhonenumber.Size = new System.Drawing.Size(82, 15);
+            this.lblPhonenumber.Size = new System.Drawing.Size(65, 12);
             this.lblPhonenumber.TabIndex = 20;
             this.lblPhonenumber.Text = "联系方式：";
             // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
-            this.lblSex.Location = new System.Drawing.Point(178, 227);
+            this.lblSex.Location = new System.Drawing.Point(134, 182);
+            this.lblSex.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSex.Name = "lblSex";
-            this.lblSex.Size = new System.Drawing.Size(52, 15);
+            this.lblSex.Size = new System.Drawing.Size(41, 12);
             this.lblSex.TabIndex = 19;
             this.lblSex.Text = "性别：";
             // 
             // lblCardID
             // 
             this.lblCardID.AutoSize = true;
-            this.lblCardID.Location = new System.Drawing.Point(163, 168);
+            this.lblCardID.Location = new System.Drawing.Point(122, 134);
+            this.lblCardID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCardID.Name = "lblCardID";
-            this.lblCardID.Size = new System.Drawing.Size(67, 15);
+            this.lblCardID.Size = new System.Drawing.Size(53, 12);
             this.lblCardID.TabIndex = 18;
             this.lblCardID.Text = "身份证：";
             // 
             // lblAdminName
             // 
             this.lblAdminName.AutoSize = true;
-            this.lblAdminName.Location = new System.Drawing.Point(133, 126);
+            this.lblAdminName.Location = new System.Drawing.Point(100, 101);
+            this.lblAdminName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdminName.Name = "lblAdminName";
-            this.lblAdminName.Size = new System.Drawing.Size(97, 15);
+            this.lblAdminName.Size = new System.Drawing.Size(77, 12);
             this.lblAdminName.TabIndex = 17;
             this.lblAdminName.Text = "管理员姓名：";
             // 
             // lblLoginID
             // 
             this.lblLoginID.AutoSize = true;
-            this.lblLoginID.Location = new System.Drawing.Point(163, 62);
+            this.lblLoginID.Location = new System.Drawing.Point(122, 50);
+            this.lblLoginID.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoginID.Name = "lblLoginID";
-            this.lblLoginID.Size = new System.Drawing.Size(67, 15);
+            this.lblLoginID.Size = new System.Drawing.Size(53, 12);
             this.lblLoginID.TabIndex = 15;
             this.lblLoginID.Text = "用户名：";
             // 
@@ -159,9 +172,9 @@
             // 
             // FrmUpdate
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(467, 480);
+            this.ClientSize = new System.Drawing.Size(350, 384);
             this.Controls.Add(this.cboWarehouseName);
             this.Controls.Add(this.txtPhonenumber);
             this.Controls.Add(this.txtSex);
@@ -175,6 +188,7 @@
             this.Controls.Add(this.lblCardID);
             this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.lblLoginID);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmUpdate";
             this.Text = "FrmUpdate";
             this.Load += new System.EventHandler(this.FrmUpdate_Load);

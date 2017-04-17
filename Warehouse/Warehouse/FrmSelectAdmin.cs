@@ -11,9 +11,9 @@ using System.Data.SqlClient;
 
 namespace Warehouse
 {
-    public partial class FrmWarehouseAdmin : Form
+    public partial class FrmSelectAdmin : Form
     {
-        public FrmWarehouseAdmin()
+        public FrmSelectAdmin()
         {
             InitializeComponent();
         }
@@ -39,6 +39,7 @@ namespace Warehouse
             {
                 this.errorProvider1.Clear();
             }
+            this.lvwSelect.Items.Clear();
             string strSQL = "sp_SelectAdmin";
             using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure, new SqlParameter("@WAName", this.txtName.Text.Trim())))
             {
@@ -94,7 +95,7 @@ namespace Warehouse
                 DialogResult dr = MessageBox.Show("您确认要删除用户" + loginId + "吗？", "确认", MessageBoxButtons.YesNo);
                 if (dr == DialogResult.Yes)
                 {
-                    FrmAdminDelete f = new FrmAdminDelete(loginId);
+                    FrmAdminDelete f = new FrmAdminDelete(WAID);
                     this.Hide();
                     f.ShowDialog();
                     this.btnSelect.PerformClick();

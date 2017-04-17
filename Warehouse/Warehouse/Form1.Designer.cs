@@ -50,34 +50,30 @@
             "管理员",
             "店员",
             "供应商"});
-            this.comboBox1.Location = new System.Drawing.Point(109, 55);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(82, 44);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 23);
+            this.comboBox1.Size = new System.Drawing.Size(121, 20);
             this.comboBox1.TabIndex = 0;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 120);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Location = new System.Drawing.Point(82, 96);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 25);
+            this.textBox1.Size = new System.Drawing.Size(121, 21);
             this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(109, 190);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Location = new System.Drawing.Point(82, 152);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(161, 25);
+            this.textBox2.Size = new System.Drawing.Size(122, 21);
             this.textBox2.TabIndex = 2;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(137, 264);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(103, 211);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 29);
+            this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "登录";
             this.button1.UseVisualStyleBackColor = true;
@@ -89,8 +85,7 @@
             this.菜单ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(384, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(288, 25);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -101,7 +96,7 @@
             this.tsmiWarehouse,
             this.添加新店面信息ToolStripMenuItem});
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
-            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(51, 24);
+            this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.菜单ToolStripMenuItem.Text = "菜单";
             // 
             // 注册用户ToolStripMenuItem
@@ -111,52 +106,52 @@
             this.注册店员ToolStripMenuItem,
             this.注册供应商ToolStripMenuItem});
             this.注册用户ToolStripMenuItem.Name = "注册用户ToolStripMenuItem";
-            this.注册用户ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.注册用户ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册用户ToolStripMenuItem.Text = "注册用户";
             // 
             // tsmiRegister
             // 
             this.tsmiRegister.Name = "tsmiRegister";
-            this.tsmiRegister.Size = new System.Drawing.Size(189, 26);
+            this.tsmiRegister.Size = new System.Drawing.Size(160, 22);
             this.tsmiRegister.Text = "注册仓库管理员";
+            this.tsmiRegister.Click += new System.EventHandler(this.tsmiRegister_Click);
             // 
             // 注册店员ToolStripMenuItem
             // 
             this.注册店员ToolStripMenuItem.Name = "注册店员ToolStripMenuItem";
-            this.注册店员ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.注册店员ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册店员ToolStripMenuItem.Text = "注册店员";
             // 
             // 注册供应商ToolStripMenuItem
             // 
             this.注册供应商ToolStripMenuItem.Name = "注册供应商ToolStripMenuItem";
-            this.注册供应商ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.注册供应商ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册供应商ToolStripMenuItem.Text = "注册供应商";
             // 
             // tsmiWarehouse
             // 
             this.tsmiWarehouse.Name = "tsmiWarehouse";
-            this.tsmiWarehouse.Size = new System.Drawing.Size(189, 26);
+            this.tsmiWarehouse.Size = new System.Drawing.Size(160, 22);
             this.tsmiWarehouse.Text = "添加新仓库信息";
             this.tsmiWarehouse.Click += new System.EventHandler(this.tsmiWarehouse_Click);
             // 
             // 添加新店面信息ToolStripMenuItem
             // 
             this.添加新店面信息ToolStripMenuItem.Name = "添加新店面信息ToolStripMenuItem";
-            this.添加新店面信息ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
+            this.添加新店面信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.添加新店面信息ToolStripMenuItem.Text = "添加新店面信息";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(384, 330);
+            this.ClientSize = new System.Drawing.Size(288, 264);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);

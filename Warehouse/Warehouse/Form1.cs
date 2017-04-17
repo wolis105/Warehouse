@@ -24,5 +24,13 @@ namespace Warehouse
             f.ShowDialog();
             this.Show();
         }
+
+        private void tsmiRegister_Click(object sender, EventArgs e)
+        {
+            FrmSelectAdmin f = new FrmSelectAdmin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

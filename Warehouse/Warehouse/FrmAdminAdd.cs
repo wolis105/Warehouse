@@ -106,6 +106,7 @@ namespace Warehouse
 
             string strSQL = "sp_AdminAdd";
                 int rows = db.ExecuteNonQuery(strSQL, CommandType.StoredProcedure,
+                    new SqlParameter("@WAID", WAID),
                      new SqlParameter("@WALojinID", WALojinID),
                 new SqlParameter("@WAPassword", WAPassword),
                 new SqlParameter("@WAName", WAName),

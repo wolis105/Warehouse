@@ -17,18 +17,13 @@ namespace Warehouse
         {
             InitializeComponent();
         }
-        public FrmAdminUpdatePassword(string WAID)
-        {
-            this.WAID = WAID;
-            InitializeComponent();
-        }
         private DBHelper db = new DBHelper();
         private string WAID = null;
         private string password = null;
         private void FrmAdminUpdatePassword_Load(object sender, EventArgs e)
         {
             string strSQL = "sp_UpdatePassword";
-            using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure, new SqlParameter("@WAID", WAID)))
+            using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure,new SqlParameter("@WAID", WAID)))
             {
                 while (reader.Read())
                 {

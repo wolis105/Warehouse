@@ -59,6 +59,7 @@ namespace Warehouse
             if(rows>0)
             {
                 MessageBox.Show("修改成功！");
+                this.Close();
             }
             else
             {

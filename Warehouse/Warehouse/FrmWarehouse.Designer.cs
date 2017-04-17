@@ -35,7 +35,7 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.lvwSelect = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,19 +54,19 @@
             this.tsmiUpdate,
             this.tsmiDelete});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(175, 56);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 48);
             // 
             // tsmiUpdate
             // 
             this.tsmiUpdate.Name = "tsmiUpdate";
-            this.tsmiUpdate.Size = new System.Drawing.Size(181, 26);
+            this.tsmiUpdate.Size = new System.Drawing.Size(148, 22);
             this.tsmiUpdate.Text = "修改仓库信息";
             this.tsmiUpdate.Click += new System.EventHandler(this.tsmiUpdate_Click);
             // 
             // tsmiDelete
             // 
             this.tsmiDelete.Name = "tsmiDelete";
-            this.tsmiDelete.Size = new System.Drawing.Size(174, 26);
+            this.tsmiDelete.Size = new System.Drawing.Size(148, 22);
             this.tsmiDelete.Text = "删除仓库信息";
             this.tsmiDelete.Click += new System.EventHandler(this.tsmiDelete_Click);
             // 
@@ -76,10 +76,9 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.Location = new System.Drawing.Point(488, 52);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(4);
+            this.btnAdd.Location = new System.Drawing.Point(366, 42);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(100, 29);
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
             this.btnAdd.TabIndex = 1;
             this.btnAdd.Text = "新增仓库";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -87,30 +86,29 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(488, 111);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelect.Location = new System.Drawing.Point(366, 89);
             this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(100, 29);
+            this.btnSelect.Size = new System.Drawing.Size(75, 23);
             this.btnSelect.TabIndex = 2;
             this.btnSelect.Text = "查询";
             this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
-            // listView1
+            // lvwSelect
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.lvwSelect.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4});
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.Location = new System.Drawing.Point(16, 199);
-            this.listView1.Margin = new System.Windows.Forms.Padding(4);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(593, 306);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.lvwSelect.FullRowSelect = true;
+            this.lvwSelect.GridLines = true;
+            this.lvwSelect.Location = new System.Drawing.Point(12, 159);
+            this.lvwSelect.Name = "lvwSelect";
+            this.lvwSelect.Size = new System.Drawing.Size(446, 246);
+            this.lvwSelect.TabIndex = 3;
+            this.lvwSelect.UseCompatibleStateImageBehavior = false;
+            this.lvwSelect.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -135,27 +133,26 @@
             // lblName
             // 
             this.lblName.AutoSize = true;
-            this.lblName.Location = new System.Drawing.Point(24, 115);
-            this.lblName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblName.Location = new System.Drawing.Point(18, 92);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(202, 15);
+            this.lblName.Size = new System.Drawing.Size(161, 12);
             this.lblName.TabIndex = 4;
             this.lblName.Text = "请输入你要查询的仓库名称：";
             // 
             // cboName
             // 
             this.cboName.FormattingEnabled = true;
-            this.cboName.Location = new System.Drawing.Point(273, 115);
-            this.cboName.Margin = new System.Windows.Forms.Padding(4);
+            this.cboName.Location = new System.Drawing.Point(205, 92);
             this.cboName.Name = "cboName";
-            this.cboName.Size = new System.Drawing.Size(160, 23);
+            this.cboName.Size = new System.Drawing.Size(121, 20);
             this.cboName.TabIndex = 5;
             // 
             // btnSelectAll
             // 
-            this.btnSelectAll.Location = new System.Drawing.Point(488, 156);
+            this.btnSelectAll.Location = new System.Drawing.Point(366, 125);
+            this.btnSelectAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSelectAll.Name = "btnSelectAll";
-            this.btnSelectAll.Size = new System.Drawing.Size(100, 23);
+            this.btnSelectAll.Size = new System.Drawing.Size(75, 18);
             this.btnSelectAll.TabIndex = 6;
             this.btnSelectAll.Text = "查询所有";
             this.btnSelectAll.UseVisualStyleBackColor = true;
@@ -163,17 +160,16 @@
             // 
             // FrmWarehouse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 581);
+            this.ClientSize = new System.Drawing.Size(470, 465);
             this.ContextMenuStrip = this.contextMenuStrip1;
             this.Controls.Add(this.btnSelectAll);
             this.Controls.Add(this.cboName);
             this.Controls.Add(this.lblName);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.lvwSelect);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnAdd);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmWarehouse";
             this.Text = "仓库增删查库界面";
             this.Load += new System.EventHandler(this.FrmWarehouse_Load);
@@ -190,7 +186,7 @@
         private System.Windows.Forms.ToolStripMenuItem tsmiUpdate;
         private System.Windows.Forms.ToolStripMenuItem tsmiDelete;
         private System.Windows.Forms.ErrorProvider errorProvider1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView lvwSelect;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
