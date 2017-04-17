@@ -64,6 +64,18 @@
     <Compile Include="FrmSupplier.Designer.cs">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateAdmin.Designer.cs">
+      <DependentUpon>FrmUpdateAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdateAdminPw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateAdminPw.Designer.cs">
+      <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUpdateDl.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +92,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupplier.resx">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateAdmin.resx">
+      <DependentUpon>FrmUpdateAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateAdminPw.resx">
+      <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateDl.resx">
       <DependentUpon>FrmUpdateDl.cs</DependentUpon>

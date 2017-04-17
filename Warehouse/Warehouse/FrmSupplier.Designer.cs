@@ -32,16 +32,17 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdateMsg = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmsiClose = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiUpdatePw = new System.Windows.Forms.ToolStripMenuItem();
             this.lvwShow = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cmsChoice = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.tmsiUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.tmsiDelete = new System.Windows.Forms.ToolStripMenuItem();
             this.btnOK = new System.Windows.Forms.Button();
-            this.tmsiClose = new System.Windows.Forms.ToolStripMenuItem();
             this.lblName = new System.Windows.Forms.Label();
             this.cboName = new System.Windows.Forms.ComboBox();
-            this.cmsChoice = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tmsiDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.tmsiUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.cmsChoice.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +61,7 @@
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmiUpdateMsg,
+            this.tsmiUpdatePw,
             this.tmsiClose});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(44, 21);
@@ -70,6 +72,21 @@
             this.tsmiUpdateMsg.Name = "tsmiUpdateMsg";
             this.tsmiUpdateMsg.Size = new System.Drawing.Size(152, 22);
             this.tsmiUpdateMsg.Text = "修改信息";
+            this.tsmiUpdateMsg.Click += new System.EventHandler(this.tsmiUpdateMsg_Click);
+            // 
+            // tmsiClose
+            // 
+            this.tmsiClose.Name = "tmsiClose";
+            this.tmsiClose.Size = new System.Drawing.Size(152, 22);
+            this.tmsiClose.Text = "退出";
+            this.tmsiClose.Click += new System.EventHandler(this.tmsiClose_Click);
+            // 
+            // tsmiUpdatePw
+            // 
+            this.tsmiUpdatePw.Name = "tsmiUpdatePw";
+            this.tsmiUpdatePw.Size = new System.Drawing.Size(152, 22);
+            this.tsmiUpdatePw.Text = "修改密码";
+            this.tsmiUpdatePw.Click += new System.EventHandler(this.tsmiUpdatePw_Click);
             // 
             // lvwShow
             // 
@@ -77,7 +94,7 @@
             this.columnHeader1,
             this.columnHeader2});
             this.lvwShow.ContextMenuStrip = this.cmsChoice;
-            this.lvwShow.ForeColor = System.Drawing.SystemColors.Window;
+            this.lvwShow.ForeColor = System.Drawing.SystemColors.WindowText;
             this.lvwShow.FullRowSelect = true;
             this.lvwShow.GridLines = true;
             this.lvwShow.Location = new System.Drawing.Point(0, 144);
@@ -97,6 +114,27 @@
             this.columnHeader2.Text = "商品数量：";
             this.columnHeader2.Width = 86;
             // 
+            // cmsChoice
+            // 
+            this.cmsChoice.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tmsiUpdate,
+            this.tmsiDelete});
+            this.cmsChoice.Name = "cmsChoice";
+            this.cmsChoice.Size = new System.Drawing.Size(137, 48);
+            // 
+            // tmsiUpdate
+            // 
+            this.tmsiUpdate.Name = "tmsiUpdate";
+            this.tmsiUpdate.Size = new System.Drawing.Size(136, 22);
+            this.tmsiUpdate.Text = "修改供应单";
+            this.tmsiUpdate.Click += new System.EventHandler(this.tmsiUpdate_Click);
+            // 
+            // tmsiDelete
+            // 
+            this.tmsiDelete.Name = "tmsiDelete";
+            this.tmsiDelete.Size = new System.Drawing.Size(136, 22);
+            this.tmsiDelete.Text = "删除供应单";
+            // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(299, 57);
@@ -106,13 +144,6 @@
             this.btnOK.Text = "查询";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
-            // 
-            // tmsiClose
-            // 
-            this.tmsiClose.Name = "tmsiClose";
-            this.tmsiClose.Size = new System.Drawing.Size(152, 22);
-            this.tmsiClose.Text = "退出";
-            this.tmsiClose.Click += new System.EventHandler(this.tmsiClose_Click);
             // 
             // lblName
             // 
@@ -130,27 +161,6 @@
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(121, 20);
             this.cboName.TabIndex = 4;
-            // 
-            // cmsChoice
-            // 
-            this.cmsChoice.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tmsiUpdate,
-            this.tmsiDelete});
-            this.cmsChoice.Name = "cmsChoice";
-            this.cmsChoice.Size = new System.Drawing.Size(137, 48);
-            // 
-            // tmsiDelete
-            // 
-            this.tmsiDelete.Name = "tmsiDelete";
-            this.tmsiDelete.Size = new System.Drawing.Size(136, 22);
-            this.tmsiDelete.Text = "删除供应单";
-            // 
-            // tmsiUpdate
-            // 
-            this.tmsiUpdate.Name = "tmsiUpdate";
-            this.tmsiUpdate.Size = new System.Drawing.Size(136, 22);
-            this.tmsiUpdate.Text = "修改供应单";
-            this.tmsiUpdate.Click += new System.EventHandler(this.tmsiUpdate_Click);
             // 
             // FrmSupplier
             // 
@@ -189,5 +199,6 @@
         private System.Windows.Forms.ContextMenuStrip cmsChoice;
         private System.Windows.Forms.ToolStripMenuItem tmsiUpdate;
         private System.Windows.Forms.ToolStripMenuItem tmsiDelete;
+        private System.Windows.Forms.ToolStripMenuItem tsmiUpdatePw;
     }
 }

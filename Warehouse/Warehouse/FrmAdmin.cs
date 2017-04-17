@@ -17,39 +17,41 @@ namespace Warehouse
         {
             InitializeComponent();
         }
-
+      
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+ 
         string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
 
         private void btnDetermine_Click_1(object sender, EventArgs e)
         {
+            this.errorProvider1.Clear();
             string spID = Guid.NewGuid().ToString();
            
             string loginid =this . txtLoginId.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(txtLoginId.Text))
+            if (string.IsNullOrWhiteSpace(txtLoginId.Text))
             {
                 this.errorProvider1.SetError(txtLoginId,"账号不能为空");
             }
             string password = this.txtPassword.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(txtPassword.Text))
+            if (string.IsNullOrWhiteSpace(txtPassword.Text))
             {
                 this.errorProvider1.SetError(txtPassword, "密码不能为空");
             }
             string name = this.txtName.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(txtName.Text))
+            if (string.IsNullOrWhiteSpace(txtName.Text))
             {
                 this.errorProvider1.SetError(txtName, "供应商姓名不能为空");
             }
             string contact = this.txtContact.Text.Trim();
-            if (!string.IsNullOrWhiteSpace(txtContact.Text))
+            if (string.IsNullOrWhiteSpace(txtContact.Text))
             {
                 this.errorProvider1.SetError(txtContact, "联系人不能为空");
             }
             string phone = "未填写！";
-            if (!string.IsNullOrWhiteSpace(txtPhone.Text))
+            if (string.IsNullOrWhiteSpace(txtPhone.Text))
             {
                  phone = this.txtPhone.Text.Trim();
             }

@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNum = new System.Windows.Forms.TextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.cboName = new System.Windows.Forms.ComboBox();
@@ -54,12 +54,12 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "数量：";
             // 
-            // textBox2
+            // txtNum
             // 
-            this.textBox2.Location = new System.Drawing.Point(101, 106);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(117, 21);
-            this.textBox2.TabIndex = 3;
+            this.txtNum.Location = new System.Drawing.Point(101, 106);
+            this.txtNum.Name = "txtNum";
+            this.txtNum.Size = new System.Drawing.Size(117, 21);
+            this.txtNum.TabIndex = 3;
             // 
             // btnOK
             // 
@@ -96,7 +96,7 @@
             this.Controls.Add(this.cboName);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnOK);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtNum);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FrmUpdateDl";
@@ -111,7 +111,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNum;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.ComboBox cboName;
