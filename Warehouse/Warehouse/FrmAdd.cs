@@ -18,8 +18,16 @@ namespace Warehouse
             InitializeComponent();
         }
 
+        private string str = null;
+
         private string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
         private bool flag = false;
+        private bool flag1 = false;
+
+        public void stu(string str1)
+        {
+            str = str1;
+        }
 
         /// <summary>
         /// 商品入库到仓库
@@ -49,47 +57,91 @@ namespace Warehouse
             {
                 errorProvider1.Clear();
             }
-            string pdID = Guid.NewGuid().ToString();
-            string rID = Guid.NewGuid().ToString();
-            DateTime birthday = DateTime.Now;
 
-            string strSQL = "insert into Purchase(RID,PcDate,WhID)"
-                + "values(@RID,@PcDate,@WhID)"
-                + "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
-                + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
-
-            //if (flag)
-            //{
-            //    strSQL = "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
-            //    + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
-            //}
-
-            using (SqlConnection con = new SqlConnection(strCon))
+            if (str != null)
             {
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                cmd.Parameters.AddWithValue("@PDID", pdID);
-                cmd.Parameters.AddWithValue("@PDCount", number);
-                cmd.Parameters.AddWithValue("@RID", rID);
-                cmd.Parameters.AddWithValue("@GdName", goodsName);
-                cmd.Parameters.AddWithValue("@PcDate", birthday);
-                cmd.Parameters.AddWithValue("@WhID", 1);
+                string strSQL2 = "select MAX(DlCount),SUM(PDCount) from Deliver d inner join PurchaseDetail p on d.GdID=p.GdID where d.GdID=(select GdID from Goods where GdName=@GdName)";
 
-                con.Open();
-
-                int rows = cmd.ExecuteNonQuery();
-
-                if (rows > 0)
+                using (SqlConnection con = new SqlConnection(strCon))
                 {
-                    MessageBox.Show("入库成功！");
-                    string str = DateTime.Now.ToString();
-                    FrmAddLook frm = new FrmAddLook(str);
-                }
-                else
-                {
-                    MessageBox.Show("入库失败！");
+                    SqlCommand cmd = new SqlCommand(strSQL2, con);
+                    cmd.Parameters.AddWithValue("@GdName", goodsName);
+
+                    con.Open();
+
+           
+                    DateTime dlCount = Convert.ToDateTime(cmd.ExecuteScalar());
+
+                    con.Close();
+
+                    MessageBox.Show(dlCount.ToString());
+                    //if (Convert.ToInt32(number) > pDCount)
+                    //{
+                    //    MessageBox.Show($"货物供应不足,请联系供应商！！剩余{pDCount}");
+                    //}
+                    //else if (Convert.ToInt32(number) < pDCount)
+                    //{
+
+                    //}
+                    //else if (Convert.ToInt32(number) == pDCount)
+                    //{
+
+                    //}
                 }
 
-                con.Close();
+
+                string pdID = Guid.NewGuid().ToString();
+                DateTime birthday = DateTime.Now;
+                
+                string strSQL = "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
+                    + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
+
+                using (SqlConnection con = new SqlConnection(strCon))
+                {
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    cmd.Parameters.AddWithValue("@PDID", pdID);
+                    cmd.Parameters.AddWithValue("@PDCount", number);
+                    cmd.Parameters.AddWithValue("@RID", str);
+                    cmd.Parameters.AddWithValue("@GdName", goodsName);
+
+                    con.Open();
+
+                    int rows = cmd.ExecuteNonQuery();
+
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("入库成功！");
+                        flag1 = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("入库失败！");
+                    }
+
+                    con.Close();
+                }
+
+                if (flag1)
+                {
+                    string strSQL1 = "update Purchase set PcDate=@PcDate where RID=@RID";
+
+                    using (SqlConnection con = new SqlConnection(strCon))
+                    {
+                        SqlCommand cmd = new SqlCommand(strSQL1, con);
+                        cmd.Parameters.AddWithValue("@PcDate", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@RID", str);
+
+                        con.Open();
+
+                        cmd.ExecuteNonQuery();
+
+                        con.Close();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("请先建立入库单！！！");
             }
         }
 
@@ -119,7 +171,7 @@ namespace Warehouse
                 con.Close();
             }
         }
-        
+
         /// <summary>
         /// 查找该仓库中是否存在相同的商品名
         /// </summary>
@@ -152,7 +204,7 @@ namespace Warehouse
             this.Location = frm.Location;
             this.Show();
         }
-        
+
         /// <summary>
         /// 查看货物入库明细
         /// </summary>
@@ -175,7 +227,18 @@ namespace Warehouse
             FrmPurchase frm = new FrmPurchase();
             frm.Location = this.Location;
             this.Hide();
-            frm.ShowDialog();
+            frm.ShowDialog(this);
+            frm.Activate();
+            this.Location = frm.Location;
+            this.Show();
+        }
+        
+        private void 入库单查询ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmPurchaseSelect frm = new FrmPurchaseSelect();
+            frm.Location = this.Location;
+            this.Hide();
+            frm.ShowDialog(this);
             frm.Activate();
             this.Location = frm.Location;
             this.Show();

@@ -37,9 +37,10 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.入库明细ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.货物信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.入库明细ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.新建入库单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.货物信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.入库单查询ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -108,23 +109,17 @@
             // 
             this.入库明细ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.入库明细ToolStripMenuItem1,
-            this.新建入库单ToolStripMenuItem});
+            this.新建入库单ToolStripMenuItem,
+            this.入库单查询ToolStripMenuItem1});
             this.入库明细ToolStripMenuItem.Name = "入库明细ToolStripMenuItem";
             this.入库明细ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.入库明细ToolStripMenuItem.Text = "菜单";
-            // 
-            // 货物信息ToolStripMenuItem
-            // 
-            this.货物信息ToolStripMenuItem.Name = "货物信息ToolStripMenuItem";
-            this.货物信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
-            this.货物信息ToolStripMenuItem.Text = "货物信息";
-            this.货物信息ToolStripMenuItem.Click += new System.EventHandler(this.货物信息ToolStripMenuItem_Click);
             // 
             // 入库明细ToolStripMenuItem1
             // 
             this.入库明细ToolStripMenuItem1.Name = "入库明细ToolStripMenuItem1";
             this.入库明细ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
-            this.入库明细ToolStripMenuItem1.Text = "入库明细";
+            this.入库明细ToolStripMenuItem1.Text = "所有入库明细";
             this.入库明细ToolStripMenuItem1.Click += new System.EventHandler(this.入库明细ToolStripMenuItem1_Click);
             // 
             // 新建入库单ToolStripMenuItem
@@ -134,11 +129,25 @@
             this.新建入库单ToolStripMenuItem.Text = "新建入库单";
             this.新建入库单ToolStripMenuItem.Click += new System.EventHandler(this.新建入库单ToolStripMenuItem_Click);
             // 
+            // 货物信息ToolStripMenuItem
+            // 
+            this.货物信息ToolStripMenuItem.Name = "货物信息ToolStripMenuItem";
+            this.货物信息ToolStripMenuItem.Size = new System.Drawing.Size(68, 21);
+            this.货物信息ToolStripMenuItem.Text = "供货信息";
+            this.货物信息ToolStripMenuItem.Click += new System.EventHandler(this.货物信息ToolStripMenuItem_Click);
+            // 
+            // 入库单查询ToolStripMenuItem1
+            // 
+            this.入库单查询ToolStripMenuItem1.Name = "入库单查询ToolStripMenuItem1";
+            this.入库单查询ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.入库单查询ToolStripMenuItem1.Text = "入库单查询";
+            this.入库单查询ToolStripMenuItem1.Click += new System.EventHandler(this.入库单查询ToolStripMenuItem1_Click);
+            // 
             // FrmAdd
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(267, 264);
+            this.ClientSize = new System.Drawing.Size(267, 262);
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtNumber);
@@ -170,5 +179,6 @@
         private System.Windows.Forms.ToolStripMenuItem 货物信息ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 入库明细ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 新建入库单ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 入库单查询ToolStripMenuItem1;
     }
 }

@@ -17,9 +17,9 @@ namespace Warehouse
         {
             InitializeComponent();
         }
-
+       
         private string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
-
+        public string rid = null;
         private void FrmPurchase_Load(object sender, EventArgs e)
         {
             string strSQL = "select WhName from Warehouse";
@@ -45,7 +45,7 @@ namespace Warehouse
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string rid = Guid.NewGuid().ToString();
+            rid = Guid.NewGuid().ToString();
             DateTime PcDate = DateTime.Now;
 
             string whName = this.comboBox1.Text;
@@ -75,12 +75,16 @@ namespace Warehouse
 
                 if (rows > 0)
                 {
-                    MessageBox.Show("入库成功！");
+                    MessageBox.Show("添加入库单成功！");
+                    FrmAdd frm1 = (FrmAdd)this.Owner;
+                    //注意 如果textBox1是放在panel1中的 则先找panel1 再找textBox1
+                    //((TextBox)frm1.Controls["textBox1"]).Text = rid;
+                    frm1.stu(rid);
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("入库失败！");
+                    MessageBox.Show("添加入库单失败！");
                 }
 
                 con.Close();

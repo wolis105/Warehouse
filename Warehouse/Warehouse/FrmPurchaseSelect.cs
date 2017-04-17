@@ -11,22 +11,17 @@ using System.Data.SqlClient;
 
 namespace Warehouse
 {
-    public partial class FrmAddDetail : Form
+    public partial class FrmPurchaseSelect : Form
     {
-        public FrmAddDetail()
+        public FrmPurchaseSelect()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// 提取入库明细
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FrmAddDetail_Load(object sender, EventArgs e)
+        private void FrmPurchaseSelect_Load(object sender, EventArgs e)
         {
             string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
-            string strSQL = "select GdName,PcDate,PDCount,PDID from PurchaseDetail p inner join Goods c on p.GdID=c.GdID inner join Purchase u on p.RID=u.RID";
+            string strSQL = "select * from Purchase";
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -38,14 +33,13 @@ namespace Warehouse
 
                 while (reader.Read())
                 {
-                    string gdName = reader.GetString(reader.GetOrdinal("GdName"));
+                    string rid = reader.GetString(reader.GetOrdinal("RID"));
                     DateTime pcDate = reader.GetDateTime(reader.GetOrdinal("PcDate"));
-                    int pDCount = reader.GetInt32(reader.GetOrdinal("PDCount"));
+                    string whID = reader.GetString(reader.GetOrdinal("WhID"));
 
-                    ListViewItem item = new ListViewItem(gdName);
+                    ListViewItem item = new ListViewItem(rid);
                     item.SubItems.Add(pcDate.ToString());
-                    item.SubItems.Add(pDCount.ToString());
-                    item.Tag = reader.GetString(reader.GetOrdinal("PDID"));
+                    item.SubItems.Add(whID);
 
                     this.listView1.Items.Add(item);
                 }
@@ -55,18 +49,10 @@ namespace Warehouse
             }
         }
 
-        /// <summary>
-        /// 打开入库明细详情
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
-            string str = this.listView1.SelectedItems[0].Text;
-            string str1 = this.listView1.SelectedItems[0].SubItems[2].Text;
-            string str2 = this.listView1.SelectedItems[0].SubItems[1].Text;
-            string rid = Convert.ToString(this.listView1.SelectedItems[0].Tag);
-            FrmAddLook frm = new FrmAddLook(str, str1,rid, str2);
+            string rid = this.listView1.SelectedItems[0].Text;
+            FrmPurchaseDetailSelect frm = new FrmPurchaseDetailSelect(rid);
             frm.Size = this.Size;
             frm.Location = this.Location;
             this.Hide();

@@ -11,26 +11,28 @@ using System.Data.SqlClient;
 
 namespace Warehouse
 {
-    public partial class FrmAddDetail : Form
+    public partial class FrmPurchaseDetailSelect : Form
     {
-        public FrmAddDetail()
+        public FrmPurchaseDetailSelect()
         {
             InitializeComponent();
         }
 
-        /// <summary>
-        /// 提取入库明细
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void FrmAddDetail_Load(object sender, EventArgs e)
+        public FrmPurchaseDetailSelect(string rid)
+        {
+            InitializeComponent();
+            this.rid = rid;
+        }
+        private string rid = null;
+        private void FrmPurchaseDetailSelect_Load(object sender, EventArgs e)
         {
             string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
-            string strSQL = "select GdName,PcDate,PDCount,PDID from PurchaseDetail p inner join Goods c on p.GdID=c.GdID inner join Purchase u on p.RID=u.RID";
+            string strSQL = "select GdName,PcDate,PDCount,PDID from PurchaseDetail p inner join Goods c on p.GdID=c.GdID inner join Purchase u on p.RID=u.RID where p.RID=@RID";
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@RID",rid);
 
                 con.Open();
 
@@ -55,18 +57,13 @@ namespace Warehouse
             }
         }
 
-        /// <summary>
-        /// 打开入库明细详情
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
             string str = this.listView1.SelectedItems[0].Text;
             string str1 = this.listView1.SelectedItems[0].SubItems[2].Text;
             string str2 = this.listView1.SelectedItems[0].SubItems[1].Text;
             string rid = Convert.ToString(this.listView1.SelectedItems[0].Tag);
-            FrmAddLook frm = new FrmAddLook(str, str1,rid, str2);
+            FrmAddLook frm = new FrmAddLook(str, str1, rid, str2);
             frm.Size = this.Size;
             frm.Location = this.Location;
             this.Hide();

@@ -18,17 +18,12 @@ namespace Warehouse
             InitializeComponent();
         }
         
-        public FrmAddLook(string gdName, string number, string rid)
+        public FrmAddLook(string gdName, string number, string rid,string time)
         {
             InitializeComponent();
             this.gdName = gdName;
             this.number = number;
             this.rid = rid;
-        }
-
-        public FrmAddLook(string time)
-        {
-            InitializeComponent();
             this.time = time;
         }
 
@@ -56,12 +51,7 @@ namespace Warehouse
                 this.lblNumber.Text = number;                   //入库货物数量
                 this.label4.Text = "入库";                      //类型（入库或出库）
                 this.label6.Text = gdName;                      //显示商品名
-                if (this.label8.Text == "label8")
-                {
-                    this.label8.Text = DateTime.Now.ToString();
-                }
-                     //入库的时间
-
+                this.label8.Text = time;                        //入库的时间
                 this.label10.Text = rid;                        //入库明细单单号（方便查找）
                 this.label12.Text = pDCount.ToString();         //仓库货物总数量
             }
