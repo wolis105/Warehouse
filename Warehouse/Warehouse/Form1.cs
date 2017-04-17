@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace Warehouse
 {
     public partial class Form1 : Form
@@ -56,6 +57,27 @@ namespace Warehouse
         }
 
         private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 注册店员ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAdd_Clerk1 f = new FrmAdd_Clerk1();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void 添加新店面信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAdd_Shop f = new FrmAdd_Shop();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void 菜单ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -50,13 +50,14 @@
             // 
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
+            "商品存库",
             "提货单",
-            "销售单",
-            "商品存库"});
+            "销售单"});
             this.comboBox1.Location = new System.Drawing.Point(105, 32);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(146, 20);
             this.comboBox1.TabIndex = 1;
+            this.comboBox1.Text = "商品存库";
             // 
             // label2
             // 
@@ -122,6 +123,7 @@
             this.Controls.Add(this.label1);
             this.Name = "FrmQuery_Shop";
             this.Text = "查询";
+            this.Load += new System.EventHandler(this.FrmQuery_Shop_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

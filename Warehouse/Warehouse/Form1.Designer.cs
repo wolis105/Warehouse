@@ -98,6 +98,7 @@
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
             this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.菜单ToolStripMenuItem.Text = "菜单";
+            this.菜单ToolStripMenuItem.Click += new System.EventHandler(this.菜单ToolStripMenuItem_Click);
             // 
             // 注册用户ToolStripMenuItem
             // 
@@ -120,6 +121,7 @@
             this.注册店员ToolStripMenuItem.Name = "注册店员ToolStripMenuItem";
             this.注册店员ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册店员ToolStripMenuItem.Text = "注册店员";
+            this.注册店员ToolStripMenuItem.Click += new System.EventHandler(this.注册店员ToolStripMenuItem_Click);
             // 
             // 注册供应商ToolStripMenuItem
             // 
@@ -139,6 +141,7 @@
             this.添加新店面信息ToolStripMenuItem.Name = "添加新店面信息ToolStripMenuItem";
             this.添加新店面信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.添加新店面信息ToolStripMenuItem.Text = "添加新店面信息";
+            this.添加新店面信息ToolStripMenuItem.Click += new System.EventHandler(this.添加新店面信息ToolStripMenuItem_Click);
             // 
             // Form1
             // 

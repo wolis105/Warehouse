@@ -52,6 +52,24 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdd_Clerk1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd_Clerk1.Designer.cs">
+      <DependentUpon>FrmAdd_Clerk1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdd_Clerk2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd_Clerk2.Designer.cs">
+      <DependentUpon>FrmAdd_Clerk2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdd_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd_Shop.Designer.cs">
+      <DependentUpon>FrmAdd_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmExtract.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +110,15 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd_Clerk1.resx">
+      <DependentUpon>FrmAdd_Clerk1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd_Clerk2.resx">
+      <DependentUpon>FrmAdd_Clerk2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd_Shop.resx">
+      <DependentUpon>FrmAdd_Shop.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmExtract.resx">
       <DependentUpon>FrmExtract.cs</DependentUpon>

@@ -61,7 +61,7 @@ namespace Warehouse
 
         private void button4_Click(object sender, EventArgs e)
         {
-            FrmShopInformation f = new FrmShopInformation();
+            FrmShopInformation f = new FrmShopInformation(id);
             this.Hide();
             f.ShowDialog();
             this.Show();
