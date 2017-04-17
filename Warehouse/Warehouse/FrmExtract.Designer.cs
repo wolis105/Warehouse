@@ -40,8 +40,8 @@
             this.txtNumber = new System.Windows.Forms.TextBox();
             this.errMistake = new System.Windows.Forms.ErrorProvider(this.components);
             this.lblWHouse = new System.Windows.Forms.Label();
-            this.txtShName = new System.Windows.Forms.TextBox();
-            this.txtWHouse = new System.Windows.Forms.TextBox();
+            this.cboShName = new System.Windows.Forms.ComboBox();
+            this.cboWhName = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.errMistake)).BeginInit();
             this.SuspendLayout();
             // 
@@ -137,29 +137,29 @@
             this.lblWHouse.TabIndex = 18;
             this.lblWHouse.Text = "提货仓库";
             // 
-            // txtShName
+            // cboShName
             // 
-            this.txtShName.Enabled = false;
-            this.txtShName.Location = new System.Drawing.Point(142, 114);
-            this.txtShName.Name = "txtShName";
-            this.txtShName.Size = new System.Drawing.Size(200, 21);
-            this.txtShName.TabIndex = 20;
+            this.cboShName.FormattingEnabled = true;
+            this.cboShName.Location = new System.Drawing.Point(142, 106);
+            this.cboShName.Name = "cboShName";
+            this.cboShName.Size = new System.Drawing.Size(200, 20);
+            this.cboShName.TabIndex = 19;
             // 
-            // txtWHouse
+            // cboWhName
             // 
-            this.txtWHouse.Enabled = false;
-            this.txtWHouse.Location = new System.Drawing.Point(142, 351);
-            this.txtWHouse.Name = "txtWHouse";
-            this.txtWHouse.Size = new System.Drawing.Size(200, 21);
-            this.txtWHouse.TabIndex = 21;
+            this.cboWhName.FormattingEnabled = true;
+            this.cboWhName.Location = new System.Drawing.Point(142, 352);
+            this.cboWhName.Name = "cboWhName";
+            this.cboWhName.Size = new System.Drawing.Size(200, 20);
+            this.cboWhName.TabIndex = 20;
             // 
             // FrmExtract
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(368, 561);
-            this.Controls.Add(this.txtWHouse);
-            this.Controls.Add(this.txtShName);
+            this.Controls.Add(this.cboWhName);
+            this.Controls.Add(this.cboShName);
             this.Controls.Add(this.lblWHouse);
             this.Controls.Add(this.txtNumber);
             this.Controls.Add(this.lblNumber);
@@ -192,7 +192,7 @@
         private System.Windows.Forms.TextBox txtNumber;
         private System.Windows.Forms.ErrorProvider errMistake;
         private System.Windows.Forms.Label lblWHouse;
-        private System.Windows.Forms.TextBox txtWHouse;
-        private System.Windows.Forms.TextBox txtShName;
+        private System.Windows.Forms.ComboBox cboWhName;
+        private System.Windows.Forms.ComboBox cboShName;
     }
 }

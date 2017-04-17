@@ -45,22 +45,7 @@ namespace Warehouse
             }
 
         }
-
-        private void tsmiRemove_Click(object sender, EventArgs e)
-        {
-            //if(this.lvwSelectlist.SelectedItems.Count>0)
-            //{
-            //    string guid = this.lvwSelectlist.SelectedItems[0].Text;
-            //    FrmRemove f = new FrmRemove(guid);
-            //    this.Hide();
-            //    f.ShowDialog();
-            //    this.Show();
-            //}
-            //else
-            //{
-            //    MessageBox.Show("您还没有选择！");
-            //}
-        }
+        
         //将商品表，销售店面表，提货表，提货明细表，仓库表五表进行连接。查出listView表里的各列
         private void btnQuery_Click(object sender, EventArgs e)
         {

@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.btnExtract = new System.Windows.Forms.Button();
             this.cboGdName = new System.Windows.Forms.ComboBox();
             this.lblGdName = new System.Windows.Forms.Label();
@@ -40,12 +39,9 @@
             this.columnHeader5 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader7 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.cmsControl = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.tsmiRemove = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnQuery = new System.Windows.Forms.Button();
             this.columnHeader8 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnQuery = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
-            this.cmsControl.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnExtract
@@ -88,7 +84,6 @@
             this.columnHeader6,
             this.columnHeader7,
             this.columnHeader8});
-            this.lvwSelectlist.ContextMenuStrip = this.cmsControl;
             this.lvwSelectlist.FullRowSelect = true;
             this.lvwSelectlist.GridLines = true;
             this.lvwSelectlist.Location = new System.Drawing.Point(14, 159);
@@ -127,19 +122,10 @@
             // 
             this.columnHeader7.Text = "商品规格";
             // 
-            // cmsControl
+            // columnHeader8
             // 
-            this.cmsControl.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiRemove});
-            this.cmsControl.Name = "cmsControl";
-            this.cmsControl.Size = new System.Drawing.Size(137, 26);
-            // 
-            // tsmiRemove
-            // 
-            this.tsmiRemove.Name = "tsmiRemove";
-            this.tsmiRemove.Size = new System.Drawing.Size(136, 22);
-            this.tsmiRemove.Text = "删除提货单";
-            this.tsmiRemove.Click += new System.EventHandler(this.tsmiRemove_Click);
+            this.columnHeader8.Text = "提货仓库名";
+            this.columnHeader8.Width = 81;
             // 
             // btnQuery
             // 
@@ -150,11 +136,6 @@
             this.btnQuery.Text = "查询";
             this.btnQuery.UseVisualStyleBackColor = true;
             this.btnQuery.Click += new System.EventHandler(this.btnQuery_Click);
-            // 
-            // columnHeader8
-            // 
-            this.columnHeader8.Text = "提货仓库名";
-            this.columnHeader8.Width = 81;
             // 
             // btnClose
             // 
@@ -180,7 +161,6 @@
             this.Name = "FrmExtractDetail";
             this.Text = "提货界面";
             this.Load += new System.EventHandler(this.FrmExtractDetail_Load);
-            this.cmsControl.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -192,8 +172,6 @@
         private System.Windows.Forms.ComboBox cboGdName;
         private System.Windows.Forms.Label lblGdName;
         private System.Windows.Forms.ListView lvwSelectlist;
-        private System.Windows.Forms.ContextMenuStrip cmsControl;
-        private System.Windows.Forms.ToolStripMenuItem tsmiRemove;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;

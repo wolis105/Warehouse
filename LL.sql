@@ -27,13 +27,28 @@ go
 create procedure sp_SelectOne
 @GdName nvarchar(10)
 as
-select ShName from Shop where ShID=(select ShID from Extract where EtID=(select EtID from ExtractDetail where GdID=(Select GdID from Goods where GdName=@GdName))) 
+select ShName from Shop where ShID in(select ShID from Extract where EtID in(select EtID from ExtractDetail where GdID in(Select GdID from Goods where GdName=@GdName))) 
 go
 
 create procedure sp_SelectOnly
 @GdName nvarchar(10)
 as
-Select WhName from Warehouse where WhID=(select WhID from Extract where EtID=(select EtID from ExtractDetail where GdID=(Select GdID from Goods where GdName=@GdName)))
+Select WhName from Warehouse where WhID in(select WhID from Extract where EtID in(select EtID from ExtractDetail where GdID in(Select GdID from Goods where GdName=@GdName)))
+go
+
+
+create procedure sp_Number
+@eDCount int,
+@pDCount int,
+@sDCount int,
+@dlCount int,
+@number int,
+@gdID nvarchar(50)
+as
+set @eDCount=(select sum(EDCount) from ExtractDetail where GdID=@gdID)
+set @pDCount=(select sum(PDCount) from PurchaseDetail where GdID=@gdID)
+set @sDCount=(select sum(SDCount) from SalesDetail where GdID=@gdID)
+set @dlCount=(select sum(DlCount) from Deliver where GdID=@gdID)
 go
 
 
