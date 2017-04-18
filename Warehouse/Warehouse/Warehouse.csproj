@@ -131,6 +131,54 @@
     <Compile Include="FrmUpdateAdminPw.Designer.cs">
       <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd.Designer.cs">
+      <DependentUpon>FrmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddDetail.Designer.cs">
+      <DependentUpon>FrmAddDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddLook.Designer.cs">
+      <DependentUpon>FrmAddLook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGoodsSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodsSelect.Designer.cs">
+      <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGoodsSelectLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodsSelectLook.Designer.cs">
+      <DependentUpon>FrmGoodsSelectLook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchase.Designer.cs">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseDetailSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseDetailSelect.Designer.cs">
+      <DependentUpon>FrmPurchaseDetailSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseSelect.Designer.cs">
+      <DependentUpon>FrmPurchaseSelect.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -174,6 +222,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateAdminPw.resx">
       <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd.resx">
+      <DependentUpon>FrmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddDetail.resx">
+      <DependentUpon>FrmAddDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddLook.resx">
+      <DependentUpon>FrmAddLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodsSelect.resx">
+      <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodsSelectLook.resx">
+      <DependentUpon>FrmGoodsSelectLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchase.resx">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseDetailSelect.resx">
+      <DependentUpon>FrmPurchaseDetailSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseSelect.resx">
+      <DependentUpon>FrmPurchaseSelect.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
