@@ -70,12 +70,6 @@
     <Compile Include="FrmAdd_Shop.Designer.cs">
       <DependentUpon>FrmAdd_Shop.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmExtract.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmExtract.Designer.cs">
-      <DependentUpon>FrmExtract.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmQuery_Shop.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,9 +113,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdd_Shop.resx">
       <DependentUpon>FrmAdd_Shop.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmExtract.resx">
-      <DependentUpon>FrmExtract.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmQuery_Shop.resx">
       <DependentUpon>FrmQuery_Shop.cs</DependentUpon>
