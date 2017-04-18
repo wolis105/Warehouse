@@ -41,9 +41,9 @@
             this.注册供应商ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWarehouse = new System.Windows.Forms.ToolStripMenuItem();
             this.添加新店面信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.仓库管理ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -56,7 +56,7 @@
             "店员",
             "供应商"});
             this.comboBox1.Location = new System.Drawing.Point(109, 55);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(160, 23);
             this.comboBox1.TabIndex = 0;
@@ -64,7 +64,7 @@
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(109, 120);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(160, 25);
             this.textBox1.TabIndex = 1;
@@ -72,7 +72,7 @@
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(109, 190);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(161, 25);
             this.textBox2.TabIndex = 2;
@@ -80,7 +80,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(137, 264);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 3;
@@ -153,10 +153,7 @@
             this.添加新店面信息ToolStripMenuItem.Name = "添加新店面信息ToolStripMenuItem";
             this.添加新店面信息ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.添加新店面信息ToolStripMenuItem.Text = "添加新店面信息";
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
+            this.添加新店面信息ToolStripMenuItem.Click += new System.EventHandler(this.添加新店面信息ToolStripMenuItem_Click);
             // 
             // 管理ToolStripMenuItem
             // 
@@ -169,9 +166,13 @@
             // 仓库管理ToolStripMenuItem
             // 
             this.仓库管理ToolStripMenuItem.Name = "仓库管理ToolStripMenuItem";
-            this.仓库管理ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
+            this.仓库管理ToolStripMenuItem.Size = new System.Drawing.Size(144, 26);
             this.仓库管理ToolStripMenuItem.Text = "仓库管理";
             this.仓库管理ToolStripMenuItem.Click += new System.EventHandler(this.仓库管理ToolStripMenuItem_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -184,7 +185,7 @@
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);

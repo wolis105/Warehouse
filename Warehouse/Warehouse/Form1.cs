@@ -177,5 +177,10 @@ namespace Warehouse
             f.ShowDialog();
             this.Show();
         }
+
+        private void 添加新店面信息ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
