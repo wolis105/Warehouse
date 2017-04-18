@@ -18,6 +18,8 @@ namespace Warehouse
             InitializeComponent();
         }
         private DBHelper db = new DBHelper();
+        string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
+        string id = null;
         private void tsmiWarehouse_Click(object sender, EventArgs e)
         {
             FrmWarehouseAdd f = new FrmWarehouseAdd();
@@ -74,6 +76,37 @@ namespace Warehouse
                 {
                     MessageBox.Show("您输入的用户名或密码不正确！");
                 }
+                if (comboBox1.Text.Trim() == "供应商")
+                {
+                    strSQL = "select * from Supplier where  SpLoginID=@SpLoginID";
+                    using (SqlConnection con = new SqlConnection(strCon))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand(strSQL, con);
+                        cmd.Parameters.AddWithValue("@SpLoginID", textBox1.Text.Trim());
+                        string pw = null;
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            pw = reader.GetString(reader.GetOrdinal("SpPassword"));
+                            id = reader.GetString(reader.GetOrdinal("SpID"));
+                        }
+                        if (pw == textBox2.Text.Trim())
+                        {
+                            MessageBox.Show("登录成功！");
+                            FrmSupplier f = new Warehouse.FrmSupplier(id);
+                            this.Hide();
+                            f.ShowDialog();
+                            this.Show();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("登录失败！");
+                        }
+                        con.Close();
+                    }
+                }
             }
         }
 
@@ -84,42 +117,7 @@ namespace Warehouse
             f.ShowDialog();
             this.Show();
         }
-        string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
-        string id = null;
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (comboBox1.Text.Trim()=="供应商")
-            {
-                string strSQL = "select * from Supplier where  SpLoginID=@SpLoginID";
-                using (SqlConnection con =new SqlConnection(strCon))
-                {
-                    con.Open();
-                    SqlCommand cmd = new SqlCommand(strSQL,con);
-                    cmd.Parameters.AddWithValue("@SpLoginID", textBox1.Text.Trim());
-                    string pw = null;
-                    SqlDataReader reader = cmd.ExecuteReader();
-                    if (reader.Read())
-                    {
-                        pw = reader.GetString(reader.GetOrdinal("SpPassword"));
-                        id = reader.GetString(reader.GetOrdinal("SpID"));
-                    }
-                    if (pw == textBox2.Text.Trim())
-                    {
-                        MessageBox.Show("登录成功！");
-                        FrmSupplier f = new Warehouse.FrmSupplier(id);
-                        this.Hide();
-                        f.ShowDialog();
-                        this.Show();
-
-                    }
-                    else
-                    {
-                        MessageBox.Show("登录失败！");
-                    }
-                    con.Close();
-                }
-            }
-        }
+        
+        
     }
 }
