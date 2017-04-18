@@ -30,15 +30,13 @@
         {
             this.btnStorage = new System.Windows.Forms.Button();
             this.btnLibrary = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStorage
             // 
-            this.btnStorage.Location = new System.Drawing.Point(43, 156);
+            this.btnStorage.Location = new System.Drawing.Point(30, 78);
             this.btnStorage.Name = "btnStorage";
-            this.btnStorage.Size = new System.Drawing.Size(75, 23);
+            this.btnStorage.Size = new System.Drawing.Size(198, 246);
             this.btnStorage.TabIndex = 0;
             this.btnStorage.Text = "入库";
             this.btnStorage.UseVisualStyleBackColor = true;
@@ -46,39 +44,19 @@
             // 
             // btnLibrary
             // 
-            this.btnLibrary.Location = new System.Drawing.Point(249, 156);
+            this.btnLibrary.Location = new System.Drawing.Point(287, 78);
             this.btnLibrary.Name = "btnLibrary";
-            this.btnLibrary.Size = new System.Drawing.Size(75, 23);
+            this.btnLibrary.Size = new System.Drawing.Size(195, 246);
             this.btnLibrary.TabIndex = 1;
             this.btnLibrary.Text = "出库";
             this.btnLibrary.UseVisualStyleBackColor = true;
             this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(43, 276);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(249, 285);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 23);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // FrmOperation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 398);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
             this.Controls.Add(this.btnLibrary);
             this.Controls.Add(this.btnStorage);
             this.Name = "FrmOperation";
@@ -92,7 +70,5 @@
 
         private System.Windows.Forms.Button btnStorage;
         private System.Windows.Forms.Button btnLibrary;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
     }
 }
