@@ -48,6 +48,10 @@ namespace Warehouse
 
         private void button2_Click(object sender, EventArgs e)
         {
+            FrmExtract f = new FrmExtract();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -46,9 +46,9 @@ namespace Warehouse
         private void btnExtract_Click(object sender, EventArgs e)
         {
             string str = this.txtNumber.Text.Trim();
-            if (Regex.IsMatch(str, "^[\\d]+$") == false || str == "")
+            if (Regex.IsMatch(str, "^[\\d]+$") == false || str == ""||str=="0")
             {
-                errMistake.SetError(txtNumber, "货品数量只能输数字且不能为空！");
+                errMistake.SetError(txtNumber, "货品数量只能输数字且不能为空或提取数不能为0！");
                 return;
             }
             string strSQL1 = "sp_Count";
