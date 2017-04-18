@@ -67,10 +67,32 @@ namespace Warehouse
                 }
                 if (isValid)
                 {
-                    FrmOperation f = new FrmOperation();
-                    this.Hide();
-                    f.ShowDialog();
-                    this.Show();
+                    strSQL = "select * from WarehouseAdmin where  WALojinID=@WALojinID";
+                    using (SqlConnection con = new SqlConnection(strCon))
+                    {
+                        con.Open();
+                        SqlCommand cmd = new SqlCommand(strSQL, con);
+                        cmd.Parameters.AddWithValue("@WALojinID", textBox1.Text.Trim());
+                        string pw = null;
+                        SqlDataReader reader = cmd.ExecuteReader();
+                        if (reader.Read())
+                        {
+                            id = reader.GetString(reader.GetOrdinal("WhID"));
+                        }
+                        if (id != null)
+                        {
+                            FrmOperation f = new FrmOperation(id);
+                            this.Hide();
+                            f.ShowDialog();
+                            this.Show();
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("登录失败！");
+                        }
+                        con.Close();
+                    }
                 }
                 else
                 {

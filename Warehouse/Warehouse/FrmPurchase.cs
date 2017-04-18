@@ -18,7 +18,7 @@ namespace Warehouse
             InitializeComponent();
         }
        
-        private string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
+        private string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123;";
         public string rid = null;
         private void FrmPurchase_Load(object sender, EventArgs e)
         {

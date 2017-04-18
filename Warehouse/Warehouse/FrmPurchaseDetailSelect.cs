@@ -26,7 +26,7 @@ namespace Warehouse
         private string rid = null;
         private void FrmPurchaseDetailSelect_Load(object sender, EventArgs e)
         {
-            string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
+            string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123;";
             string strSQL = "select GdName,PcDate,PDCount,PDID from PurchaseDetail p inner join Goods c on p.GdID=c.GdID inner join Purchase u on p.RID=u.RID where p.RID=@RID";
 
             using (SqlConnection con = new SqlConnection(strCon))

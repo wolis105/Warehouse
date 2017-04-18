@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnStorage = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnLibrary = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,14 +44,15 @@
             this.btnStorage.UseVisualStyleBackColor = true;
             this.btnStorage.Click += new System.EventHandler(this.btnStorage_Click);
             // 
-            // button2
+            // btnLibrary
             // 
-            this.button2.Location = new System.Drawing.Point(249, 156);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnLibrary.Location = new System.Drawing.Point(249, 156);
+            this.btnLibrary.Name = "btnLibrary";
+            this.btnLibrary.Size = new System.Drawing.Size(75, 23);
+            this.btnLibrary.TabIndex = 1;
+            this.btnLibrary.Text = "出库";
+            this.btnLibrary.UseVisualStyleBackColor = true;
+            this.btnLibrary.Click += new System.EventHandler(this.btnLibrary_Click);
             // 
             // button3
             // 
@@ -78,10 +79,11 @@
             this.ClientSize = new System.Drawing.Size(517, 398);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnLibrary);
             this.Controls.Add(this.btnStorage);
             this.Name = "FrmOperation";
             this.Text = "FrmOperation";
+            this.Load += new System.EventHandler(this.FrmOperation_Load);
             this.ResumeLayout(false);
 
         }
@@ -89,7 +91,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnStorage;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnLibrary;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
     }

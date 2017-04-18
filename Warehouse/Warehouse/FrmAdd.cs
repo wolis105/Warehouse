@@ -20,7 +20,7 @@ namespace Warehouse
 
         private string str = null;
 
-        private string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
+        private string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123;";
         private bool flag = false;
         private bool flag1 = false;
 

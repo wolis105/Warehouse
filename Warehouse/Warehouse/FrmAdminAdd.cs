@@ -70,9 +70,9 @@ namespace Warehouse
             }
 
             string WACardID = this.txtCardID.Text.Trim();
-            if (this.txtCardID.Text == "")
+            if (this.txtCardID.Text == ""&& this.txtCardID.Text.Length!=18)
             {
-                this.errorProvider1.SetError(txtCardID, "管理员密码不能为空！");
+                this.errorProvider1.SetError(txtCardID, "管理员身份证不能为空且必须为18位！");
                 return;
             }
             else
