@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAddDl.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddDl.Designer.cs">
+      <DependentUpon>FrmAddDl.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAddGoods.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -63,6 +69,12 @@
     </Compile>
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDeleteGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDeleteGoods.Designer.cs">
+      <DependentUpon>FrmDeleteGoods.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGoods.cs">
       <SubType>Form</SubType>
@@ -88,16 +100,28 @@
     <Compile Include="FrmUpdateAdminPw.Designer.cs">
       <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateGoods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateGoods.Designer.cs">
+      <DependentUpon>FrmUpdateGoods.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddDl.resx">
+      <DependentUpon>FrmAddDl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAddGoods.resx">
       <DependentUpon>FrmAddGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDeleteGoods.resx">
+      <DependentUpon>FrmDeleteGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGoods.resx">
       <DependentUpon>FrmGoods.cs</DependentUpon>
@@ -110,6 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateAdminPw.resx">
       <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateGoods.resx">
+      <DependentUpon>FrmUpdateGoods.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

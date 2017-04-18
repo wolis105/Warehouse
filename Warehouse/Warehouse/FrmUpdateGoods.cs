@@ -8,48 +8,31 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+
 namespace Warehouse
 {
-    public partial class FrmAddGoods : Form
+    public partial class FrmUpdateGoods : Form
     {
-        public FrmAddGoods()
+        public FrmUpdateGoods()
         {
             InitializeComponent();
         }
-       private  string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
-        private void FrmAddGoods_Load(object sender, EventArgs e)
+        public FrmUpdateGoods(string id)
         {
-            string strSQL = "select * from Goods ";
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                con.Open();
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string name = reader.GetString(reader.GetOrdinal("GdName"));
-                    cboName.Items.Add(name);
-                }
-                reader.Close();
-                con.Close();
-            }
+            InitializeComponent();
+            this.id = id;
         }
-
-        private void cboName_SelectedIndexChanged(object sender, EventArgs e)
-        {
-           
-        }
+        private string id = null;
 
         private void btnOk_Click(object sender, EventArgs e)
         {
-            string guid = Guid.NewGuid().ToString();
             string name = cboName.Text.Trim();
             string type = txtType.Text.Trim();
             string sp = txtSpecification.Text.Trim();
             string unit = txtUnit.Text.Trim();
             if (string.IsNullOrWhiteSpace(name))
-           {
-                errorProvider1.SetError(cboName,"不能为空");
+            {
+                errorProvider1.SetError(cboName, "不能为空");
                 return;
             }
             if (string.IsNullOrWhiteSpace(type))
@@ -66,64 +49,56 @@ namespace Warehouse
             {
                 errorProvider1.SetError(txtUnit, "不能为空"); return;
             }
-            string strSQL = "insert into Goods(GdID,GdName,GdType,GdSpecification,GdUnit) values (@GdID,@GdName,@GdType,@GdSpecification,@GdUnit)";
+            string strSQL = "update Goods set GdType=@GdType,GdSpecification=@GdSpecification,GdUnit=@GdUnit where GdID=@GdID";
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(strSQL, con);
-                cmd.Parameters.AddWithValue("@GdID", guid);
-                cmd.Parameters.AddWithValue("@GdName", name);
+                cmd.Parameters.AddWithValue("@GdID", id);
                 cmd.Parameters.AddWithValue("@GdType", type);
                 cmd.Parameters.AddWithValue("@GdSpecification", sp);
                 cmd.Parameters.AddWithValue("@GdUnit", unit);
                 int i = cmd.ExecuteNonQuery();
                 if (i > 0)
                 {
-                    MessageBox.Show("录入成功");
+                    MessageBox.Show("修改成功");
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("录入失败");
-                
-                 }
-                
+                    MessageBox.Show("修改失败");
+                }
+
                 con.Close();
             }
         }
-
-        private void cboName_TextChanged(object sender, EventArgs e)
+        string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
+        private void btnClose_Click(object sender, EventArgs e)
         {
-            txtUnit.Enabled = true;
-            txtType.Enabled = true;
-            txtSpecification.Enabled = true;
-            btnOk.Enabled = true;
-            txtUnit.Clear();
-            txtType.Clear();
-            txtSpecification.Clear();
-            string strSQL = "select GdType,GdSpecification,GdUnit from Goods where GdName=@GdName";
+            this.Close();
+        }
+
+        private void FrmUpdateGoods_Load(object sender, EventArgs e)
+        {
+            string strSQL = "select * from Goods  where GdID=@GdID";
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(strSQL, con);
-                cmd.Parameters.AddWithValue("@GdName", cboName.Text.Trim());
+                cmd.Parameters.AddWithValue("@GdID",id);
                 SqlDataReader reader = cmd.ExecuteReader();
-                if (reader.Read())
+                while (reader.Read())
                 {
+                    string name = reader.GetString(reader.GetOrdinal("GdName"));
                     string type = reader.GetString(reader.GetOrdinal("GdType"));
                     string sp = reader.GetString(reader.GetOrdinal("GdSpecification"));
                     string unit = reader.GetString(reader.GetOrdinal("GdUnit"));
 
+                    cboName.Text = name;
                     txtType.Text = type;
                     txtUnit.Text = unit;
                     txtSpecification.Text = sp;
-
-
-                    txtUnit.Enabled = false;
-                    txtType.Enabled = false;
-                    txtSpecification.Enabled = false;
-                    btnOk.Enabled = false;
-                    MessageBox.Show("已有此商品！");
+                    cboName.Enabled = false;
                 }
                 reader.Close();
                 con.Close();

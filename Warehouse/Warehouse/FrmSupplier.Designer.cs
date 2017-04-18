@@ -30,6 +30,7 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiGoods = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdateMsg = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiUpdatePw = new System.Windows.Forms.ToolStripMenuItem();
             this.tmsiClose = new System.Windows.Forms.ToolStripMenuItem();
@@ -39,7 +40,7 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.lblName = new System.Windows.Forms.Label();
             this.cboName = new System.Windows.Forms.ComboBox();
-            this.商品ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,13 +59,20 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.商品ToolStripMenuItem,
+            this.tsmiGoods,
             this.tsmiUpdateMsg,
             this.tsmiUpdatePw,
             this.tmsiClose});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(51, 24);
             this.toolStripMenuItem1.Text = "菜单";
+            // 
+            // tsmiGoods
+            // 
+            this.tsmiGoods.Name = "tsmiGoods";
+            this.tsmiGoods.Size = new System.Drawing.Size(189, 26);
+            this.tsmiGoods.Text = "商品";
+            this.tsmiGoods.Click += new System.EventHandler(this.tsmiGoods_Click);
             // 
             // tsmiUpdateMsg
             // 
@@ -96,7 +104,7 @@
             this.lvwShow.FullRowSelect = true;
             this.lvwShow.GridLines = true;
             this.lvwShow.Location = new System.Drawing.Point(1, 111);
-            this.lvwShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.lvwShow.Margin = new System.Windows.Forms.Padding(4);
             this.lvwShow.Name = "lvwShow";
             this.lvwShow.Size = new System.Drawing.Size(547, 352);
             this.lvwShow.TabIndex = 1;
@@ -106,18 +114,18 @@
             // 
             // columnHeader1
             // 
-            this.columnHeader1.Text = "商品名字：";
+            this.columnHeader1.Text = "商品名字";
             this.columnHeader1.Width = 88;
             // 
             // columnHeader2
             // 
-            this.columnHeader2.Text = "商品数量：";
-            this.columnHeader2.Width = 86;
+            this.columnHeader2.Text = "商品数量";
+            this.columnHeader2.Width = 104;
             // 
             // btnOK
             // 
             this.btnOK.Location = new System.Drawing.Point(396, 49);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(4);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(100, 29);
             this.btnOK.TabIndex = 2;
@@ -139,29 +147,34 @@
             // 
             this.cboName.FormattingEnabled = true;
             this.cboName.Location = new System.Drawing.Point(109, 51);
-            this.cboName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cboName.Margin = new System.Windows.Forms.Padding(4);
             this.cboName.Name = "cboName";
             this.cboName.Size = new System.Drawing.Size(160, 23);
             this.cboName.TabIndex = 4;
             // 
-            // 商品ToolStripMenuItem
+            // btnAdd
             // 
-            this.商品ToolStripMenuItem.Name = "商品ToolStripMenuItem";
-            this.商品ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
-            this.商品ToolStripMenuItem.Text = "商品";
+            this.btnAdd.Location = new System.Drawing.Point(288, 49);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(101, 29);
+            this.btnAdd.TabIndex = 5;
+            this.btnAdd.Text = "添加";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // FrmSupplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(548, 456);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.cboName);
             this.Controls.Add(this.lblName);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.lvwShow);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSupplier";
             this.Text = "供应商管理系统";
             this.Load += new System.EventHandler(this.FrmSupplier_Load);
@@ -185,6 +198,7 @@
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.ComboBox cboName;
         private System.Windows.Forms.ToolStripMenuItem tsmiUpdatePw;
-        private System.Windows.Forms.ToolStripMenuItem 商品ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiGoods;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

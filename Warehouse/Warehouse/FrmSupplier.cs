@@ -104,5 +104,21 @@ namespace Warehouse
         {
 
         }
+
+        private void tsmiGoods_Click(object sender, EventArgs e)
+        {
+            FrmGoods f = new FrmGoods();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            FrmAddDl f = new FrmAddDl(id);
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }
