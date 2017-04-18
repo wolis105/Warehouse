@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DBHelper.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -64,11 +65,59 @@
     <Compile Include="FrmAddGoods.Designer.cs">
       <DependentUpon>FrmAddGoods.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdd_Clerk1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd_Clerk1.designer.cs">
+      <DependentUpon>FrmAdd_Clerk1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdd_Clerk2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd_Clerk2.designer.cs">
+      <DependentUpon>FrmAdd_Clerk2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdd_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd_Shop.designer.cs">
+      <DependentUpon>FrmAdd_Shop.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperation.Designer.cs">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmQuery_Shop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmQuery_Shop.designer.cs">
+      <DependentUpon>FrmQuery_Shop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSales.designer.cs">
+      <DependentUpon>FrmSales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShop.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShop.designer.cs">
+      <DependentUpon>FrmShop.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShopInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShopInformation.designer.cs">
+      <DependentUpon>FrmShopInformation.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmDeleteGoods.cs">
       <SubType>Form</SubType>
@@ -88,6 +137,66 @@
     <Compile Include="FrmSupplier.Designer.cs">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmAdminAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminAdd.Designer.cs">
+      <DependentUpon>FrmAdminAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminDelete.Designer.cs">
+      <DependentUpon>FrmAdminDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdminUpdatePassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdminUpdatePassword.Designer.cs">
+      <DependentUpon>FrmAdminUpdatePassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectAdmin.Designer.cs">
+      <DependentUpon>FrmSelectAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdate.Designer.cs">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdate_Pwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdate_Pwd.designer.cs">
+      <DependentUpon>FrmUpdate_Pwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouse.Designer.cs">
+      <DependentUpon>FrmWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouseAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouseAdd.Designer.cs">
+      <DependentUpon>FrmWarehouseAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouseDelete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouseDelete.Designer.cs">
+      <DependentUpon>FrmWarehouseDelete.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmWarehouseUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmWarehouseUpdate.Designer.cs">
+      <DependentUpon>FrmWarehouseUpdate.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUpdateAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +208,60 @@
     </Compile>
     <Compile Include="FrmUpdateAdminPw.Designer.cs">
       <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAdd.Designer.cs">
+      <DependentUpon>FrmAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddDetail.Designer.cs">
+      <DependentUpon>FrmAddDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAddLook.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAddLook.Designer.cs">
+      <DependentUpon>FrmAddLook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGoodsSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGoodsSelect.Designer.cs">
+      <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchase.Designer.cs">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseDetailSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseDetailSelect.Designer.cs">
+      <DependentUpon>FrmPurchaseDetailSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPurchaseSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPurchaseSelect.Designer.cs">
+      <DependentUpon>FrmPurchaseSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExtract.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtract.Designer.cs">
+      <DependentUpon>FrmExtract.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmExtractDetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmExtractDetail.Designer.cs">
+      <DependentUpon>FrmExtractDetail.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmUpdateGoods.cs">
       <SubType>Form</SubType>
@@ -117,6 +280,15 @@
     <EmbeddedResource Include="FrmAddGoods.resx">
       <DependentUpon>FrmAddGoods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd_Clerk1.resx">
+      <DependentUpon>FrmAdd_Clerk1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd_Clerk2.resx">
+      <DependentUpon>FrmAdd_Clerk2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd_Shop.resx">
+      <DependentUpon>FrmAdd_Shop.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,8 +298,53 @@
     <EmbeddedResource Include="FrmGoods.resx">
       <DependentUpon>FrmGoods.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperation.resx">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmQuery_Shop.resx">
+      <DependentUpon>FrmQuery_Shop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSales.resx">
+      <DependentUpon>FrmSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShop.resx">
+      <DependentUpon>FrmShop.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShopInformation.resx">
+      <DependentUpon>FrmShopInformation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmSupplier.resx">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminAdd.resx">
+      <DependentUpon>FrmAdminAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminDelete.resx">
+      <DependentUpon>FrmAdminDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdminUpdatePassword.resx">
+      <DependentUpon>FrmAdminUpdatePassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectAdmin.resx">
+      <DependentUpon>FrmSelectAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdate.resx">
+      <DependentUpon>FrmUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdate_Pwd.resx">
+      <DependentUpon>FrmUpdate_Pwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouse.resx">
+      <DependentUpon>FrmWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouseAdd.resx">
+      <DependentUpon>FrmWarehouseAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouseDelete.resx">
+      <DependentUpon>FrmWarehouseDelete.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmWarehouseUpdate.resx">
+      <DependentUpon>FrmWarehouseUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateAdmin.resx">
       <DependentUpon>FrmUpdateAdmin.cs</DependentUpon>
@@ -137,6 +354,33 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUpdateGoods.resx">
       <DependentUpon>FrmUpdateGoods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAdd.resx">
+      <DependentUpon>FrmAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddDetail.resx">
+      <DependentUpon>FrmAddDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAddLook.resx">
+      <DependentUpon>FrmAddLook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGoodsSelect.resx">
+      <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchase.resx">
+      <DependentUpon>FrmPurchase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseDetailSelect.resx">
+      <DependentUpon>FrmPurchaseDetailSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPurchaseSelect.resx">
+      <DependentUpon>FrmPurchaseSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtract.resx">
+      <DependentUpon>FrmExtract.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmExtractDetail.resx">
+      <DependentUpon>FrmExtractDetail.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -161,7 +405,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="项目工具\SQLQuery存储过程.sql" />
+    <Content Include="项目工具\LL.sql" />
     <Content Include="项目工具\仓库.sql" />
+    <Content Include="项目工具\团队作业SQL.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
