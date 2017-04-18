@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -35,12 +36,14 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.菜单ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册用户ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.注册仓库管理员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRegister = new System.Windows.Forms.ToolStripMenuItem();
             this.注册店员ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.注册供应商ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.添加新仓库信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiWarehouse = new System.Windows.Forms.ToolStripMenuItem();
             this.添加新店面信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -77,9 +80,11 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "登录";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.菜单ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -92,7 +97,7 @@
             // 
             this.菜单ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.注册用户ToolStripMenuItem,
-            this.添加新仓库信息ToolStripMenuItem,
+            this.tsmiWarehouse,
             this.添加新店面信息ToolStripMenuItem});
             this.菜单ToolStripMenuItem.Name = "菜单ToolStripMenuItem";
             this.菜单ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
@@ -101,18 +106,19 @@
             // 注册用户ToolStripMenuItem
             // 
             this.注册用户ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.注册仓库管理员ToolStripMenuItem,
+            this.tsmiRegister,
             this.注册店员ToolStripMenuItem,
             this.注册供应商ToolStripMenuItem});
             this.注册用户ToolStripMenuItem.Name = "注册用户ToolStripMenuItem";
             this.注册用户ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.注册用户ToolStripMenuItem.Text = "注册用户";
             // 
-            // 注册仓库管理员ToolStripMenuItem
+            // tsmiRegister
             // 
-            this.注册仓库管理员ToolStripMenuItem.Name = "注册仓库管理员ToolStripMenuItem";
-            this.注册仓库管理员ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.注册仓库管理员ToolStripMenuItem.Text = "注册仓库管理员";
+            this.tsmiRegister.Name = "tsmiRegister";
+            this.tsmiRegister.Size = new System.Drawing.Size(160, 22);
+            this.tsmiRegister.Text = "注册仓库管理员";
+            this.tsmiRegister.Click += new System.EventHandler(this.tsmiRegister_Click);
             // 
             // 注册店员ToolStripMenuItem
             // 
@@ -127,17 +133,22 @@
             this.注册供应商ToolStripMenuItem.Text = "注册供应商";
             this.注册供应商ToolStripMenuItem.Click += new System.EventHandler(this.注册供应商ToolStripMenuItem_Click);
             // 
-            // 添加新仓库信息ToolStripMenuItem
+            // tsmiWarehouse
             // 
-            this.添加新仓库信息ToolStripMenuItem.Name = "添加新仓库信息ToolStripMenuItem";
-            this.添加新仓库信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
-            this.添加新仓库信息ToolStripMenuItem.Text = "添加新仓库信息";
+            this.tsmiWarehouse.Name = "tsmiWarehouse";
+            this.tsmiWarehouse.Size = new System.Drawing.Size(160, 22);
+            this.tsmiWarehouse.Text = "添加新仓库信息";
+            this.tsmiWarehouse.Click += new System.EventHandler(this.tsmiWarehouse_Click);
             // 
             // 添加新店面信息ToolStripMenuItem
             // 
             this.添加新店面信息ToolStripMenuItem.Name = "添加新店面信息ToolStripMenuItem";
             this.添加新店面信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.添加新店面信息ToolStripMenuItem.Text = "添加新店面信息";
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Form1
             // 
@@ -154,6 +165,7 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -168,11 +180,12 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 菜单ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 注册用户ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 注册仓库管理员ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRegister;
         private System.Windows.Forms.ToolStripMenuItem 注册店员ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 注册供应商ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 添加新仓库信息ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiWarehouse;
         private System.Windows.Forms.ToolStripMenuItem 添加新店面信息ToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 
