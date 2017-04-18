@@ -67,7 +67,7 @@ namespace Warehouse
                 }
                 if (isValid)
                 {
-                    FrmSelectAdmin f = new FrmSelectAdmin();
+                    FrmOperation f = new FrmOperation();
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
@@ -118,7 +118,13 @@ namespace Warehouse
             f.ShowDialog();
             this.Show();
         }
-        
-        
+
+        private void 仓库管理ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmSelectAdmin f = new FrmSelectAdmin();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
     }
 }

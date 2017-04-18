@@ -59,6 +59,12 @@
     <Compile Include="FrmAdmin.Designer.cs">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmOperation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmOperation.Designer.cs">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -155,12 +161,6 @@
     <Compile Include="FrmGoodsSelect.Designer.cs">
       <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmGoodsSelectLook.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmGoodsSelectLook.Designer.cs">
-      <DependentUpon>FrmGoodsSelectLook.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmPurchase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +198,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmAdmin.resx">
       <DependentUpon>FrmAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmOperation.resx">
+      <DependentUpon>FrmOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSupplier.resx">
       <DependentUpon>FrmSupplier.cs</DependentUpon>
@@ -246,9 +249,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGoodsSelect.resx">
       <DependentUpon>FrmGoodsSelect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmGoodsSelectLook.resx">
-      <DependentUpon>FrmGoodsSelectLook.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPurchase.resx">
       <DependentUpon>FrmPurchase.cs</DependentUpon>

@@ -171,6 +171,7 @@
             this.仓库管理ToolStripMenuItem.Name = "仓库管理ToolStripMenuItem";
             this.仓库管理ToolStripMenuItem.Size = new System.Drawing.Size(181, 26);
             this.仓库管理ToolStripMenuItem.Text = "仓库管理";
+            this.仓库管理ToolStripMenuItem.Click += new System.EventHandler(this.仓库管理ToolStripMenuItem_Click);
             // 
             // Form1
             // 
