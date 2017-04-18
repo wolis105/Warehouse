@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl1 = new System.Windows.Forms.Label();
             this.lbl2 = new System.Windows.Forms.Label();
             this.lbl3 = new System.Windows.Forms.Label();
@@ -36,6 +37,8 @@
             this.txt3 = new System.Windows.Forms.TextBox();
             this.btnOk = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbl1
@@ -88,6 +91,7 @@
             this.txt3.PasswordChar = '*';
             this.txt3.Size = new System.Drawing.Size(100, 21);
             this.txt3.TabIndex = 5;
+            this.txt3.TextChanged += new System.EventHandler(this.txt3_TextChanged);
             // 
             // btnOk
             // 
@@ -109,6 +113,10 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmUpdateAdminPw
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -125,6 +133,7 @@
             this.Name = "FrmUpdateAdminPw";
             this.Text = "修改密码";
             this.Load += new System.EventHandler(this.FrmUpdateAdminPw_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -140,5 +149,6 @@
         private System.Windows.Forms.TextBox txt3;
         private System.Windows.Forms.Button btnOk;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

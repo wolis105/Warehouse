@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnClose = new System.Windows.Forms.Button();
             this.btnDetermine = new System.Windows.Forms.Button();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -38,6 +39,8 @@
             this.lblContact = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.lblID = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnClose
@@ -123,11 +126,15 @@
             this.lblID.TabIndex = 24;
             this.lblID.Text = "用户账号：";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FrmUpdateAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(236, 299);
+            this.ClientSize = new System.Drawing.Size(256, 283);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnDetermine);
             this.Controls.Add(this.txtPhone);
@@ -141,6 +148,7 @@
             this.Name = "FrmUpdateAdmin";
             this.Text = "修改信息";
             this.Load += new System.EventHandler(this.FrmUpdateAdmin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,5 +166,6 @@
         private System.Windows.Forms.Label lblContact;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblID;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

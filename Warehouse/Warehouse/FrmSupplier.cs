@@ -77,26 +77,7 @@ namespace Warehouse
             }
         }
         string listItems = null;
-        private void tmsiUpdate_Click(object sender, EventArgs e)
-        {
-            if (this.lvwShow.SelectedItems.Count > 0)
-            {
-                listItems = lvwShow.SelectedItems[0].Tag.ToString();
-                if (listItems != null)
-                {
-                    FrmUpdateDl frm = new FrmUpdateDl(listItems);
-                    this.Hide();
-                    frm.ShowDialog();
-                    this.Show();
-
-                }
-                this.btnOK.PerformClick();
-            }
-            else
-            {
-                MessageBox.Show("没有选择信息");
-            }
-        }
+       
 
         private void tsmiUpdateMsg_Click(object sender, EventArgs e)
         {
@@ -112,6 +93,16 @@ namespace Warehouse
             this.Hide();
             f.ShowDialog();
             this.Show();
+        }
+
+        private void cmsChoice_Opening(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void lvwShow_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

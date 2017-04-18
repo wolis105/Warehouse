@@ -35,6 +35,20 @@ namespace Warehouse
         private  string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
         private void btnOk_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            if (string.IsNullOrWhiteSpace(txt1.Text.Trim()))
+            {
+                errorProvider1.SetError(txt1, "原密码不能为空");
+            }
+            if (string.IsNullOrWhiteSpace(txt2.Text.Trim()))
+            {
+                errorProvider1.SetError(txt2, "密码不能为空");
+            }
+            if (string.IsNullOrWhiteSpace(txt3.Text.Trim()))
+            {
+                errorProvider1.SetError(txt3, "密码不能为空");
+            }
+
             string strSQL = "select * from Supplier where SpID=@SpID";
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -66,6 +80,14 @@ namespace Warehouse
                     }
                 }
                 con.Close();
+            }
+        }
+
+        private void txt3_TextChanged(object sender, EventArgs e)
+        {
+            if (txt3.Text != txt2.Text)
+            {
+                errorProvider1.SetError(txt3, "两次输出的密码不一致");
             }
         }
     }

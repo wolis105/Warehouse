@@ -51,16 +51,34 @@ namespace Warehouse
 
         private void btnDetermine_Click(object sender, EventArgs e)
         {
+            errorProvider1.Clear();
+            if (string.IsNullOrWhiteSpace(txtContact.Text.Trim()))
+            {
+                errorProvider1.SetError(txtContact,"联系人不能为空");
+            }
+            if (string.IsNullOrWhiteSpace(txtName.Text.Trim()))
+            {
+                errorProvider1.SetError(txtName, "供应商姓名不能为空");
+            }
+            if (string.IsNullOrWhiteSpace(txtLoginId.Text.Trim()))
+            {
+                errorProvider1.SetError(txtLoginId, "账号不能为空");
+            }
+            string phone = txtPhone.Text.Trim();
+            if (string.IsNullOrWhiteSpace(txtLoginId.Text.Trim()))
+            {
+                phone = "未填写号码";
+            }
             string strSQL = "update Supplier set SpLoginID=@SpLoginID,SpName=@SpName,SpContact=@SpContact,SpPhone=@SpPhone  where SpID=@SpID";
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
                 SqlCommand cmd = new SqlCommand(strSQL, con);
                 cmd.Parameters.AddWithValue("@SpID", id);
-                cmd.Parameters.AddWithValue("@SpLoginID", txtLoginId.Text);
-                cmd.Parameters.AddWithValue("@SpName", txtName.Text);
-                cmd.Parameters.AddWithValue("@SpContact", txtContact.Text);
-                cmd.Parameters.AddWithValue("@SpPhone", txtPhone.Text);
+                cmd.Parameters.AddWithValue("@SpLoginID", txtLoginId.Text.Trim());
+                cmd.Parameters.AddWithValue("@SpName", txtName.Text.Trim());
+                cmd.Parameters.AddWithValue("@SpContact", txtContact.Text.Trim());
+                cmd.Parameters.AddWithValue("@SpPhone", txtPhone.Text.Trim());
                 int num = cmd.ExecuteNonQuery();
                 if (num > 0)
                 {
