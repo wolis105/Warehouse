@@ -22,7 +22,7 @@ namespace Warehouse
             InitializeComponent();
             this.id = id;
         }
-        string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
+        private  string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123";
         private  string id = null;
         private void FrmUpdateAdmin_Load(object sender, EventArgs e)
         {
@@ -92,6 +92,11 @@ namespace Warehouse
               
                 con.Close();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

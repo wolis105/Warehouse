@@ -76,7 +76,7 @@ namespace Warehouse
                 con.Close();
             }
         }
-        string listItems = null;
+        
        
 
         private void tsmiUpdateMsg_Click(object sender, EventArgs e)
