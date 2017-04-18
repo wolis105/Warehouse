@@ -60,7 +60,15 @@ namespace Warehouse
 
             if (str != null)
             {
-                string strSQL2 = "select MAX(DlCount),SUM(PDCount) from Deliver d inner join PurchaseDetail p on d.GdID=p.GdID where d.GdID=(select GdID from Goods where GdName=@GdName)";
+                //string strSQL2 = "select sum(DlCount) from Deliver"
+                //               + "where GdID = (select GdID from Goods where GdName = @GdName)"
+                //               + "union"
+                //               + "select sum(PDCount) from PurchaseDetail"
+                //               + "where GdID = (select GdID from Goods where GdName = @GdName)";
+
+                string strSQL2 = " select sum(PDCount),(select sum(DlCount) from Deliver " 
+                               + "where GdID = (select GdID from Goods where GdName = @GdName)) from PurchaseDetail "
+                               + "where GdID = (select GdID from Goods where GdName = @GdName)";
 
                 using (SqlConnection con = new SqlConnection(strCon))
                 {
@@ -69,30 +77,28 @@ namespace Warehouse
 
                     con.Open();
 
-           
-                    DateTime dlCount = Convert.ToDateTime(cmd.ExecuteScalar());
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        int pDCount = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
+                        int dlCount = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
+                        MessageBox.Show(dlCount +"     " + pDCount);
+                        MessageBox.Show((dlCount - pDCount).ToString());
+                        if (Convert.ToInt32(number) > dlCount - pDCount)
+                        {
+                            MessageBox.Show($"货物供应不足,请联系供应商！！剩余{dlCount - pDCount}");
+                            return;
+                        }
+                    }
+                    reader.Close();
 
                     con.Close();
-
-                    MessageBox.Show(dlCount.ToString());
-                    //if (Convert.ToInt32(number) > pDCount)
-                    //{
-                    //    MessageBox.Show($"货物供应不足,请联系供应商！！剩余{pDCount}");
-                    //}
-                    //else if (Convert.ToInt32(number) < pDCount)
-                    //{
-
-                    //}
-                    //else if (Convert.ToInt32(number) == pDCount)
-                    //{
-
-                    //}
                 }
 
 
                 string pdID = Guid.NewGuid().ToString();
                 DateTime birthday = DateTime.Now;
-                
+
                 string strSQL = "insert into PurchaseDetail(PDID,PDCount,RID,GdID)"
                     + "values(@PDID,@PDCount,@RID,(select GdID from Goods where GdName=@GdName))";
 
@@ -232,7 +238,7 @@ namespace Warehouse
             this.Location = frm.Location;
             this.Show();
         }
-        
+
         private void 入库单查询ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FrmPurchaseSelect frm = new FrmPurchaseSelect();

@@ -40,7 +40,24 @@ namespace Warehouse
 
         private void FrmGoodsSelect_Load(object sender, EventArgs e)
         {
-            string strSQL = "select GdName,GdType,GdSpecification,GdUnit,sum(DlCount) from Goods g left join Deliver d on g.GdID=d.GdID";
+            //string strSQL = "select GdName,GdType,GdSpecification,GdUnit,sum(DlCount) from Goods g"
+            //              + " left join Deliver d on g.GdID=d.GdID"
+            //              + " group by GdName,GdType,GdSpecification,GdUnit"
+            //              + " union"
+            //              + " select GdName,GdType,GdSpecification,GdUnit,sum(PDCount) from Goods g"
+            //              + " left join PurchaseDetail p on g.GdID = p.GdID"
+            //              + " group by GdName,GdType,GdSpecification,GdUnit";
+
+            string strSQL = "select GdName,GdType,GdSpecification,GdUnit,sum(DlCount)"
+                          +" from Goods g"
+                          +" left join Deliver d on g.GdID = d.GdID"
+                          +" group by GdName,GdType,GdSpecification,GdUnit,d.GdID";
+
+            
+//select GdName,GdType,GdSpecification,GdUnit,sum(DlCount),sum(PDCount) from Goods g 
+// left join Deliver d on g.GdID=d.GdID
+// left join PurchaseDetail p on g.GdID=p.GdID
+//  group by GdName,GdType,GdSpecification,GdUnit
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -55,13 +72,13 @@ namespace Warehouse
                     string gdType = reader.GetString(reader.GetOrdinal("GdType"));
                     string gdSpecification = reader.GetString(reader.GetOrdinal("GdSpecification"));
                     string gdUnit = reader.GetString(reader.GetOrdinal("GdUnit"));
-                    int dlCount = reader.IsDBNull(reader.GetOrdinal("DlCount")) ? 0 : reader.GetInt32(reader.GetOrdinal("DlCount"));
+                    int dlCount = reader.IsDBNull(4) ? 0 : reader.GetInt32(4);
 
                     ListViewItem item = new ListViewItem(gdName);
                     item.SubItems.Add(gdType);
                     item.SubItems.Add(gdSpecification);
                     item.SubItems.Add(gdUnit);
-                    item.SubItems.Add(dlCount == 0 ? "0" :dlCount.ToString());
+                    item.SubItems.Add(dlCount  == 0 ? "0" : dlCount  .ToString());
 
                     this.listView1.Items.Add(item);
                 }

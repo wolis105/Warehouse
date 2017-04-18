@@ -80,9 +80,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.listView1);
             this.Name = "FrmGoodsSelect";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "供货单";
             this.Load += new System.EventHandler(this.FrmGoodsSelect_Load);
             this.ResumeLayout(false);
