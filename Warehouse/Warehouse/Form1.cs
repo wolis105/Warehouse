@@ -27,12 +27,12 @@ namespace Warehouse
         {
             if (this.comboBox1.Text == "店员")
             {
-                string strSQL = "select count(*) from Clerk where CILojinID=@CILojinID and CIPassword=@CIPassword";
+                string strSQL = "select count(*) from Clerk where ClLoginID=@ClLoginID and ClLoginPwd=@ClLoginPwd";
                 using (SqlConnection con=new SqlConnection(strCon))
                 {
                     SqlCommand cmd = new SqlCommand(strSQL, con);
-                    cmd.Parameters.AddWithValue("@CILojinID", this.textBox1.Text);
-                    cmd.Parameters.AddWithValue("@CIPassword", this.textBox2.Text);
+                    cmd.Parameters.AddWithValue("@ClLoginID", this.textBox1.Text);
+                    cmd.Parameters.AddWithValue("@ClLoginPwd", this.textBox2.Text);
                     con.Open();
                     object obj = cmd.ExecuteScalar();
                     if (obj != null)

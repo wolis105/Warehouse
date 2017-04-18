@@ -45,9 +45,10 @@ namespace Warehouse
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-            this.Close();
-            FrmAdd_Clerk1 f = new FrmAdd_Clerk1();
-            f.Close();
+            Form1 f = new Form1();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
 
         private void btnFinally_Click(object sender, EventArgs e)
@@ -111,9 +112,7 @@ namespace Warehouse
                             if (count2 == 1)
                             {
                                 MessageBox.Show("注册成功！", "提示");
-                                this.Close();
-                                FrmAdd_Clerk1 f = new FrmAdd_Clerk1();
-                                f.Close();
+                                btnClose_Click(sender, e);
                             }
                             else
                             {

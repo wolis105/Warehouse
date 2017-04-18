@@ -125,7 +125,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(110, 266);
+            this.btnClose.Location = new System.Drawing.Point(109, 266);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 9;

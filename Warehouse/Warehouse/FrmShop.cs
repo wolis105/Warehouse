@@ -40,7 +40,7 @@ namespace Warehouse
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            FrmSales f = new FrmSales();
+            FrmSales f = new FrmSales(id);
             this.Hide();
             f.ShowDialog();
             this.Show();
@@ -48,7 +48,7 @@ namespace Warehouse
 
         private void button2_Click(object sender, EventArgs e)
         {
-            FrmExtract f = new FrmExtract();
+            FrmExtract f = new FrmExtract(id);
             this.Hide();
             f.ShowDialog();
             this.Show();

@@ -31,7 +31,7 @@ namespace Warehouse
 
         private void FrmShopInformation_Load(object sender, EventArgs e)
         {
-            string strSQL2 = "select ShName from Shop s inner join Clerk on Clerk.ShID = s.ShID where Clerk.CILojinID = @id";
+            string strSQL2 = "select ShName from Shop s inner join Clerk on Clerk.ShID = s.ShID where Clerk.CILoginID = @id";
             string strSQL = "select * from Shop where ShName=@ShName";
             using (SqlConnection con = new SqlConnection(strCon))
             {

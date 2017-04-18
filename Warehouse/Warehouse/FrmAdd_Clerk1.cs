@@ -44,7 +44,7 @@ namespace Warehouse
             }
             if (this.txtPhone.Text.Trim() != "")
             {
-                if (Regex.IsMatch(this.txtPhone.Text.Trim(), @"^\d$") == false)
+                if (Regex.IsMatch(this.txtPhone.Text.Trim(), @"^\d+$") == false)
                 {
                     this.errorProvider1.SetError(this.txtPhone, "请输入数字格式！");
                     return; 
