@@ -18,16 +18,16 @@ namespace Warehouse
         {
             InitializeComponent();
         }
-        public FrmUpdate(string WAID)
+        public FrmUpdate(string wAID)
         {
-            this.WAID = WAID;
+            this.wAID = wAID;
             InitializeComponent();
         }
         private DBHelper db = new DBHelper();
-        private string WAID ;
+        private string wAID = null;
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //string WAID = this.WAID;
+            string WAID = this.wAID;
 
             string WALojinID = this.txtLoginID.Text.Trim();
             if (this.txtLoginID.Text == "")
@@ -51,9 +51,9 @@ namespace Warehouse
             else
             {
                 this.errorProvider1.Clear();
-                //}
+            }
 
-                string WACardID = this.txtCardID.Text.Trim();
+            string WACardID = this.txtCardID.Text.Trim();
                 if (this.txtCardID.Text == "")
                 {
                     this.errorProvider1.SetError(txtCardID, "管理员密码不能为空！");
@@ -90,44 +90,44 @@ namespace Warehouse
 
                 string strSQL = "sp_AdminUpdate";
                 int rows = db.ExecuteNonQuery(strSQL, CommandType.StoredProcedure,
+                     new SqlParameter("@WAID", WAID),
                     new SqlParameter("@WALojinID", WALojinID),
                     new SqlParameter("@WAName", WAName),
-                    new SqlParameter("@WACardID", WACardID),
                     new SqlParameter("@WASex", WASex),
+                    new SqlParameter("@WACardID", WACardID),
                     new SqlParameter("@WAphone", WAphone),
                     new SqlParameter("@WhName", WhName));
                 if (rows > 0)
                 {
                     MessageBox.Show("修改成功！");
+                    this.Close();
                 }
                 else
                 {
                     MessageBox.Show("修改失败！");
                 }
-
-            }
         }
         private void FrmUpdate_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(WAID))
+            if (!string.IsNullOrWhiteSpace(wAID))
             {
                 string strSQL = "sp_AdminUpdateLoad";
-                using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure,new SqlParameter("@WAID", WAID)))
-            {
+                using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure, new SqlParameter("@WAID", wAID)))
+                {
                     while (reader.Read())
                     {
                         string WALojinID = reader.GetString(reader.GetOrdinal("WALojinID"));
                         string WAName = reader.GetString(reader.GetOrdinal("WAName"));
-                        string WACardID = reader.GetString(reader.GetOrdinal("WACardID"));
                         string WASex = reader.GetString(reader.GetOrdinal("WASex"));
-                        int WAphone = reader.GetInt32(reader.GetOrdinal("WAphone"));
+                        string WACardID = reader.GetString(reader.GetOrdinal("WACardID"));
+                        string WAphone = reader.GetString(reader.GetOrdinal("WAphone"));
                         string WhName = reader.GetString(reader.GetOrdinal("WhName"));
 
                         this.txtLoginID.Text = WALojinID;
                         this.txtName.Text = WAName;
-                        this.txtCardID.Text = WACardID;
                         this.txtSex.Text = WASex;
-                        this.txtPhonenumber.Text = WAphone.ToString();
+                        this.txtCardID.Text = WACardID;
+                        this.txtPhonenumber.Text = WAphone;
                         this.cboWarehouseName.Text = WhName;
                     }
                     reader.Close();

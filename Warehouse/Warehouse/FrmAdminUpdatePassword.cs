@@ -17,6 +17,12 @@ namespace Warehouse
         {
             InitializeComponent();
         }
+
+        public FrmAdminUpdatePassword(string waID)
+        {
+            this.WAID = waID;
+            InitializeComponent();
+        }
         private DBHelper db = new DBHelper();
         private string WAID = null;
         private string password = null;
@@ -45,6 +51,16 @@ namespace Warehouse
             {
                 this.errorProvider1.Clear();
             }
+            if (this.txtOldPassword.Text != password)
+            {
+                this.errorProvider1.SetError(txtOldPassword, "您输入的原密码不正确！");
+                return;
+                //MessageBox.Show("您输入的原密码不正确！");
+            }
+            else
+            {
+                this.errorProvider1.Clear();
+            }
 
             string newPassword = this.txtNewPassword.Text.Trim();
             if(this.txtNewPassword.Text=="")
@@ -67,9 +83,16 @@ namespace Warehouse
             {
                 this.errorProvider1.Clear();
             }
-           if(this.txtOldPassword.Text!= password)
+            string strSQL = "sp_UpdateAdminPassword";
+            int rows = db.ExecuteNonQuery(strSQL,CommandType.StoredProcedure,new SqlParameter("@WAID", WAID),new SqlParameter("@WAPassword", newPassword));
+            if(rows>0)
             {
-                MessageBox.Show("您输入的原密码不正确！");
+                MessageBox.Show("修改成功！");
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("修改失败！");
             }
         }
     }

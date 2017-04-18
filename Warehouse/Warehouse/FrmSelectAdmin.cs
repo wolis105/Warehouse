@@ -30,9 +30,9 @@ namespace Warehouse
         private void btnSelect_Click(object sender, EventArgs e)
         {
             string WAName = this.txtName.Text.Trim();
-            if(this.txtName.Text=="")
+            if (this.txtName.Text == "")
             {
-                this.errorProvider1.SetError(txtName,"要查询的名字不能为空！");
+                this.errorProvider1.SetError(txtName, "要查询的名字不能为空！");
                 return;
             }
             else
@@ -68,48 +68,87 @@ namespace Warehouse
 
         private void tsmiUpdate_Click(object sender, EventArgs e)
         {
-            if(this.lvwSelect.SelectedItems.Count>0)
+            string strSQL = "sp_SelectWAID";
+            using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure, new SqlParameter("@WAName", this.lvwSelect.SelectedItems[0].Text)))
             {
-                string WAID = this.lvwSelect.SelectedItems[0].Text;
-                FrmUpdate f = new FrmUpdate(WAID);
-                this.Hide();
-                f.ShowDialog();
-                this.Show();
+                while (reader.Read())
+                {
+                    if (this.lvwSelect.SelectedItems.Count > 0)
+                    {
 
-                this.btnSelect.PerformClick();
-            }
-            else
-            {
-                MessageBox.Show("对不起！您还没有选择！");
+                        string WAID = reader.GetString(reader.GetOrdinal("WAID"));
+                        FrmUpdate f = new FrmUpdate(WAID);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+
+                        this.btnSelect.PerformClick();
+                    }
+                    else
+                    {
+                        MessageBox.Show("对不起！您还没有选择！");
+                    }
+                }
+                reader.Close();
             }
         }
 
         private void tsmiDelete_Click(object sender, EventArgs e)
         {
-            if (this.lvwSelect.SelectedItems.Count > 0)
+            string strSQL = "sp_SelectWAID";
+            using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure, new SqlParameter("@WAName", this.lvwSelect.SelectedItems[0].Text)))
             {
-                string loginId = this.lvwSelect.SelectedItems[0].Text;
-
-                string WAID = Convert.ToString(this.lvwSelect.SelectedItems[0].Tag);
-
-                DialogResult dr = MessageBox.Show("您确认要删除用户" + loginId + "吗？", "确认", MessageBoxButtons.YesNo);
-                if (dr == DialogResult.Yes)
+                while (reader.Read())
                 {
-                    FrmAdminDelete f = new FrmAdminDelete(WAID);
-                    this.Hide();
-                    f.ShowDialog();
-                    this.btnSelect.PerformClick();
+                    if (this.lvwSelect.SelectedItems.Count > 0)
+                    {
+                        string WAID = reader.GetString(reader.GetOrdinal("WAID"));
+
+                        string loginId = Convert.ToString(this.lvwSelect.SelectedItems[0].Tag);
+
+                        DialogResult dr = MessageBox.Show("您确认要删除用户" + WAID + "吗？", "确认", MessageBoxButtons.YesNo);
+                        if (dr == DialogResult.Yes)
+                        {
+                            FrmAdminDelete f = new FrmAdminDelete(WAID);
+                            this.Hide();
+                            f.ShowDialog();
+                            this.Show();
+
+                            this.btnSelect.PerformClick();
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("对不起！您还没有选择！");
+                    }
                 }
-            }
-            else
-            {
-                MessageBox.Show("对不起！您还没有选择！");
+                reader.Close();
             }
         }
 
         private void tsmiUpdatePassword_Click(object sender, EventArgs e)
         {
-            FrmAdminUpdatePassword f = new FrmAdminUpdatePassword();
+            string strSQL = "sp_SelectWAID";
+            using (SqlDataReader reader = db.ExecuteReader(strSQL, CommandType.StoredProcedure, new SqlParameter("@WAName", this.lvwSelect.SelectedItems[0].Text)))
+            {
+                while (reader.Read())
+                {
+                    if (this.lvwSelect.SelectedItems.Count > 0)
+                    {
+                        string WAID = reader.GetString(reader.GetOrdinal("WAID"));
+                        FrmAdminUpdatePassword f = new FrmAdminUpdatePassword(WAID);
+                        this.Hide();
+                        f.ShowDialog();
+                        this.Show();
+                    }
+                }
+            }
+              
+        }
+
+        private void btnWarehouse_Click(object sender, EventArgs e)
+        {
+            FrmWarehouse f = new FrmWarehouse();
             this.Hide();
             f.ShowDialog();
             this.Show();

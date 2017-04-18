@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -40,7 +41,9 @@
             this.注册供应商ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tsmiWarehouse = new System.Windows.Forms.ToolStripMenuItem();
             this.添加新店面信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // comboBox1
@@ -77,6 +80,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "登录";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // menuStrip1
             // 
@@ -141,6 +145,10 @@
             this.添加新店面信息ToolStripMenuItem.Size = new System.Drawing.Size(160, 22);
             this.添加新店面信息ToolStripMenuItem.Text = "添加新店面信息";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -156,6 +164,7 @@
             this.Text = "Form1";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -175,6 +184,7 @@
         private System.Windows.Forms.ToolStripMenuItem 注册供应商ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tsmiWarehouse;
         private System.Windows.Forms.ToolStripMenuItem 添加新店面信息ToolStripMenuItem;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
 

@@ -121,9 +121,9 @@
             // btnAdd
             // 
             this.btnAdd.Location = new System.Drawing.Point(45, 304);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(56, 18);
+            this.btnAdd.Size = new System.Drawing.Size(86, 18);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "确认添加";
             this.btnAdd.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@
             // txtLoginID
             // 
             this.txtLoginID.Location = new System.Drawing.Point(149, 38);
-            this.txtLoginID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLoginID.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoginID.Name = "txtLoginID";
             this.txtLoginID.Size = new System.Drawing.Size(92, 21);
             this.txtLoginID.TabIndex = 8;
@@ -140,7 +140,7 @@
             // txtPassword
             // 
             this.txtPassword.Location = new System.Drawing.Point(149, 76);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(92, 21);
@@ -149,7 +149,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(149, 103);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(92, 21);
             this.txtName.TabIndex = 10;
@@ -157,7 +157,7 @@
             // txtCardID
             // 
             this.txtCardID.Location = new System.Drawing.Point(149, 135);
-            this.txtCardID.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCardID.Margin = new System.Windows.Forms.Padding(2);
             this.txtCardID.Name = "txtCardID";
             this.txtCardID.Size = new System.Drawing.Size(92, 21);
             this.txtCardID.TabIndex = 11;
@@ -165,7 +165,7 @@
             // txtSex
             // 
             this.txtSex.Location = new System.Drawing.Point(149, 170);
-            this.txtSex.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSex.Margin = new System.Windows.Forms.Padding(2);
             this.txtSex.Name = "txtSex";
             this.txtSex.Size = new System.Drawing.Size(92, 21);
             this.txtSex.TabIndex = 12;
@@ -173,7 +173,7 @@
             // txtPhonenumber
             // 
             this.txtPhonenumber.Location = new System.Drawing.Point(149, 198);
-            this.txtPhonenumber.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPhonenumber.Margin = new System.Windows.Forms.Padding(2);
             this.txtPhonenumber.Name = "txtPhonenumber";
             this.txtPhonenumber.Size = new System.Drawing.Size(92, 21);
             this.txtPhonenumber.TabIndex = 13;
@@ -182,7 +182,7 @@
             // 
             this.cboWarehouseName.FormattingEnabled = true;
             this.cboWarehouseName.Location = new System.Drawing.Point(149, 243);
-            this.cboWarehouseName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cboWarehouseName.Margin = new System.Windows.Forms.Padding(2);
             this.cboWarehouseName.Name = "cboWarehouseName";
             this.cboWarehouseName.Size = new System.Drawing.Size(92, 20);
             this.cboWarehouseName.TabIndex = 14;
@@ -211,7 +211,7 @@
             this.Controls.Add(this.lblAdminName);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblLoginID);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAdminAdd";
             this.Text = "FrmAdminAdd";
             this.Load += new System.EventHandler(this.FrmAdminAdd_Load);

@@ -45,6 +45,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.txtName = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnWarehouse = new System.Windows.Forms.Button();
             this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
@@ -82,8 +83,8 @@
             // 
             // btnSelect
             // 
-            this.btnSelect.Location = new System.Drawing.Point(426, 45);
-            this.btnSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelect.Location = new System.Drawing.Point(385, 92);
+            this.btnSelect.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(72, 18);
             this.btnSelect.TabIndex = 1;
@@ -93,8 +94,8 @@
             // 
             // btnAddAdmin
             // 
-            this.btnAddAdmin.Location = new System.Drawing.Point(406, 99);
-            this.btnAddAdmin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAddAdmin.Location = new System.Drawing.Point(385, 57);
+            this.btnAddAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddAdmin.Name = "btnAddAdmin";
             this.btnAddAdmin.Size = new System.Drawing.Size(92, 18);
             this.btnAddAdmin.TabIndex = 2;
@@ -124,7 +125,7 @@
             this.lvwSelect.FullRowSelect = true;
             this.lvwSelect.GridLines = true;
             this.lvwSelect.Location = new System.Drawing.Point(-2, 153);
-            this.lvwSelect.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lvwSelect.Margin = new System.Windows.Forms.Padding(2);
             this.lvwSelect.Name = "lvwSelect";
             this.lvwSelect.Size = new System.Drawing.Size(524, 292);
             this.lvwSelect.TabIndex = 4;
@@ -143,12 +144,12 @@
             // 
             // columnHeader3
             // 
-            this.columnHeader3.Text = "管理员身份证";
+            this.columnHeader3.Text = "管理员性别";
             this.columnHeader3.Width = 244;
             // 
             // columnHeader4
             // 
-            this.columnHeader4.Text = "管理员性别";
+            this.columnHeader4.Text = "管理员身份证";
             this.columnHeader4.Width = 219;
             // 
             // columnHeader5
@@ -164,7 +165,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(154, 70);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(76, 21);
             this.txtName.TabIndex = 5;
@@ -173,12 +174,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnWarehouse
+            // 
+            this.btnWarehouse.Location = new System.Drawing.Point(385, 12);
+            this.btnWarehouse.Name = "btnWarehouse";
+            this.btnWarehouse.Size = new System.Drawing.Size(120, 23);
+            this.btnWarehouse.TabIndex = 6;
+            this.btnWarehouse.Text = "进入仓库管理界面";
+            this.btnWarehouse.UseVisualStyleBackColor = true;
+            this.btnWarehouse.Click += new System.EventHandler(this.btnWarehouse_Click);
+            // 
             // FrmSelectAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(517, 447);
             this.ContextMenuStrip = this.contextMenuStrip1;
+            this.Controls.Add(this.btnWarehouse);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.lvwSelect);
             this.Controls.Add(this.lblName);
@@ -211,5 +223,6 @@
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader5;
         private System.Windows.Forms.ColumnHeader columnHeader6;
+        private System.Windows.Forms.Button btnWarehouse;
     }
 }
