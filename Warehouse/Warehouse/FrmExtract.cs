@@ -61,10 +61,9 @@ namespace Warehouse
 
                 con.Open();
                 obj = cmd1.ExecuteScalar();
-                MessageBox.Show(obj.ToString());
                 con.Close();
             }
-            if (obj.ToString().Length>0)
+            if (obj.ToString().Length > 0)
             {
 
                 string etID = Guid.NewGuid().ToString();
@@ -90,15 +89,71 @@ namespace Warehouse
                     cmd.Parameters.AddWithValue("@GdName", gdName);
 
                     con.Open();
-                    int rows = cmd.ExecuteNonQuery();
-                    con.Close();
-                    if (rows > 0)
+                    if (Convert.ToInt32(obj) > edCount)
                     {
-                        MessageBox.Show("提货成功！");
+                        using (SqlConnection con2 = new SqlConnection(strCon))
+                        {
+                            con2.Open();
+                            string strSQL2 = "update PurchaseDetail set PDCount-=@PDCount where GdID=(select GdID from Goods where GdName=@GdName)";
+                            SqlCommand cmd2 = new SqlCommand(strSQL2, con2);
+                            cmd2.Parameters.AddWithValue("@PDCount", Convert.ToInt32(this.txtNumber.Text));
+                            cmd2.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
+
+                            int row1 = cmd2.ExecuteNonQuery();
+                            if (row1 > 0)
+                            {
+                                int rows = cmd.ExecuteNonQuery();
+                                con.Close();
+                                if (rows > 0)
+                                {
+                                    MessageBox.Show("提货成功！");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("提货失败！");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("更新失败！");
+                            }
+                            con2.Close();
+                        }
                     }
+                    else if (Convert.ToInt32(obj) == edCount)
+                    {
+                        using (SqlConnection con3 = new SqlConnection(strCon))
+                        {
+                            con3.Open();
+                            string strSQL2 = "delete from PurchaseDetail  where GdID=(select GdID from Goods where GdName=@GdName)";
+                            SqlCommand cmd3 = new SqlCommand(strSQL2, con3);
+                            cmd3.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
+
+                            int row2 = cmd3.ExecuteNonQuery();
+                            if (row2 > 0)
+                            {
+                                int rows = cmd.ExecuteNonQuery();
+                                con.Close();
+                                if (rows > 0)
+                                {
+                                    MessageBox.Show("提货成功！");
+                                }
+                                else
+                                {
+                                    MessageBox.Show("提货失败！");
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("删除失败！");
+                            }
+                            con3.Close();
+                        }
+                    }
+
                     else
                     {
-                        MessageBox.Show("提货失败！");
+                        MessageBox.Show("数量不足！");
                     }
                 }
 
@@ -110,56 +165,56 @@ namespace Warehouse
             this.Close();
         }
 
-    private void cboGdName_TextChanged(object sender, EventArgs e)
-    {
-        this.cboShName.Items.Clear();
-        string strSQL = "sp_SelectOne";
-        using (SqlConnection con = new SqlConnection(strCon))
+        private void cboGdName_TextChanged(object sender, EventArgs e)
         {
-            SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
-            con.Open();
-
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+            this.cboShName.Items.Clear();
+            string strSQL = "sp_SelectOne";
+            using (SqlConnection con = new SqlConnection(strCon))
             {
-                string shName = reader.GetString(reader.GetOrdinal("ShName"));
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
+                con.Open();
 
-                //cboShName.Text = shName;
-                cboShName.Items.Add(shName);
-            }
-            if (cboShName.Items != null)
-            {
-                cboShName.Text = cboShName.Items[0].ToString();
-            }
-            reader.Close();
-            con.Close();
-        }
-        this.cboWhName.Items.Clear();
-        strSQL = "sp_SelectOnly";
-        using (SqlConnection con = new SqlConnection(strCon))
-        {
-            SqlCommand cmd = new SqlCommand(strSQL, con);
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
-            con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string shName = reader.GetString(reader.GetOrdinal("ShName"));
 
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
+                    //cboShName.Text = shName;
+                    cboShName.Items.Add(shName);
+                }
+                if (cboShName.Items != null)
+                {
+                    cboShName.Text = cboShName.Items[0].ToString();
+                }
+                reader.Close();
+                con.Close();
+            }
+            this.cboWhName.Items.Clear();
+            strSQL = "sp_SelectOnly";
+            using (SqlConnection con = new SqlConnection(strCon))
             {
-                string whName = reader.GetString(reader.GetOrdinal("WhName"));
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
+                con.Open();
 
-                //cboWhName.Text= whName;
-                cboWhName.Items.Add(whName);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string whName = reader.GetString(reader.GetOrdinal("WhName"));
+
+                    //cboWhName.Text= whName;
+                    cboWhName.Items.Add(whName);
+                }
+                if (cboWhName.Items != null)
+                {
+                    cboWhName.Text = cboWhName.Items[0].ToString();
+                }
+                reader.Close();
+                con.Close();
             }
-            if (cboWhName.Items != null)
-            {
-                cboWhName.Text = cboWhName.Items[0].ToString();
-            }
-            reader.Close();
-            con.Close();
         }
     }
-}
 }

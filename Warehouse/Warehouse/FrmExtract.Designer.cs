@@ -48,7 +48,7 @@
             // lblGdName
             // 
             this.lblGdName.AutoSize = true;
-            this.lblGdName.Location = new System.Drawing.Point(48, 43);
+            this.lblGdName.Location = new System.Drawing.Point(41, 43);
             this.lblGdName.Name = "lblGdName";
             this.lblGdName.Size = new System.Drawing.Size(41, 12);
             this.lblGdName.TabIndex = 0;
@@ -57,7 +57,7 @@
             // cboGdName
             // 
             this.cboGdName.FormattingEnabled = true;
-            this.cboGdName.Location = new System.Drawing.Point(142, 35);
+            this.cboGdName.Location = new System.Drawing.Point(135, 35);
             this.cboGdName.Name = "cboGdName";
             this.cboGdName.Size = new System.Drawing.Size(200, 20);
             this.cboGdName.TabIndex = 5;
@@ -65,7 +65,7 @@
             // 
             // btnExtract
             // 
-            this.btnExtract.Location = new System.Drawing.Point(267, 419);
+            this.btnExtract.Location = new System.Drawing.Point(260, 419);
             this.btnExtract.Name = "btnExtract";
             this.btnExtract.Size = new System.Drawing.Size(75, 23);
             this.btnExtract.TabIndex = 10;
@@ -75,7 +75,7 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(50, 419);
+            this.btnClose.Location = new System.Drawing.Point(43, 419);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(75, 23);
             this.btnClose.TabIndex = 11;
@@ -86,7 +86,7 @@
             // lblShName
             // 
             this.lblShName.AutoSize = true;
-            this.lblShName.Location = new System.Drawing.Point(48, 114);
+            this.lblShName.Location = new System.Drawing.Point(41, 114);
             this.lblShName.Name = "lblShName";
             this.lblShName.Size = new System.Drawing.Size(53, 12);
             this.lblShName.TabIndex = 12;
@@ -95,7 +95,7 @@
             // lblTime
             // 
             this.lblTime.AutoSize = true;
-            this.lblTime.Location = new System.Drawing.Point(48, 195);
+            this.lblTime.Location = new System.Drawing.Point(41, 195);
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(53, 12);
             this.lblTime.TabIndex = 14;
@@ -103,7 +103,7 @@
             // 
             // dtpTime
             // 
-            this.dtpTime.Location = new System.Drawing.Point(142, 186);
+            this.dtpTime.Location = new System.Drawing.Point(135, 186);
             this.dtpTime.Name = "dtpTime";
             this.dtpTime.Size = new System.Drawing.Size(200, 21);
             this.dtpTime.TabIndex = 15;
@@ -111,7 +111,7 @@
             // lblNumber
             // 
             this.lblNumber.AutoSize = true;
-            this.lblNumber.Location = new System.Drawing.Point(48, 280);
+            this.lblNumber.Location = new System.Drawing.Point(41, 280);
             this.lblNumber.Name = "lblNumber";
             this.lblNumber.Size = new System.Drawing.Size(53, 12);
             this.lblNumber.TabIndex = 16;
@@ -119,7 +119,7 @@
             // 
             // txtNumber
             // 
-            this.txtNumber.Location = new System.Drawing.Point(142, 271);
+            this.txtNumber.Location = new System.Drawing.Point(135, 271);
             this.txtNumber.Name = "txtNumber";
             this.txtNumber.Size = new System.Drawing.Size(200, 21);
             this.txtNumber.TabIndex = 17;
@@ -131,7 +131,7 @@
             // lblWHouse
             // 
             this.lblWHouse.AutoSize = true;
-            this.lblWHouse.Location = new System.Drawing.Point(48, 360);
+            this.lblWHouse.Location = new System.Drawing.Point(41, 360);
             this.lblWHouse.Name = "lblWHouse";
             this.lblWHouse.Size = new System.Drawing.Size(53, 12);
             this.lblWHouse.TabIndex = 18;
@@ -140,7 +140,7 @@
             // cboShName
             // 
             this.cboShName.FormattingEnabled = true;
-            this.cboShName.Location = new System.Drawing.Point(142, 106);
+            this.cboShName.Location = new System.Drawing.Point(135, 106);
             this.cboShName.Name = "cboShName";
             this.cboShName.Size = new System.Drawing.Size(200, 20);
             this.cboShName.TabIndex = 19;
@@ -148,7 +148,7 @@
             // cboWhName
             // 
             this.cboWhName.FormattingEnabled = true;
-            this.cboWhName.Location = new System.Drawing.Point(142, 352);
+            this.cboWhName.Location = new System.Drawing.Point(135, 352);
             this.cboWhName.Name = "cboWhName";
             this.cboWhName.Size = new System.Drawing.Size(200, 20);
             this.cboWhName.TabIndex = 20;
