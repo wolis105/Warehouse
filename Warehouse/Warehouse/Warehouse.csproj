@@ -119,6 +119,18 @@
     <Compile Include="FrmWarehouseUpdate.Designer.cs">
       <DependentUpon>FrmWarehouseUpdate.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmUpdateAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateAdmin.Designer.cs">
+      <DependentUpon>FrmUpdateAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpdateAdminPw.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpdateAdminPw.Designer.cs">
+      <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -156,6 +168,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmWarehouseUpdate.resx">
       <DependentUpon>FrmWarehouseUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateAdmin.resx">
+      <DependentUpon>FrmUpdateAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpdateAdminPw.resx">
+      <DependentUpon>FrmUpdateAdminPw.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
