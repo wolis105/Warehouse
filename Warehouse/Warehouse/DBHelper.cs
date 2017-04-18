@@ -16,7 +16,7 @@ namespace Warehouse
             cmd = new SqlCommand();
             cmd.Connection = con;
         }
-        private string strCon = @"server=DEEP-20161031DK;database=Warehouse_New;uid=sa;password=123;";
+        private string strCon = @"server=.\SQL2014;database=Warehouse_New;uid=sa;password=123;";
         private SqlConnection con = null;
         private SqlCommand cmd = null;
 

@@ -41,9 +41,9 @@ namespace Warehouse
             if (this.comboBox1.Text == "管理员")
             {
                 string adminLoginID = this.textBox1.Text.Trim();
-               
+
                 string adminLoginPassword = this.textBox2.Text.Trim();
-               
+
                 bool isValid = false;
                 if (this.textBox1.Text == "")
                 {
@@ -56,16 +56,16 @@ namespace Warehouse
                 }
 
                 string strSQL = "sp_AdminLogin";
-                object obj = db.ExecuteScalar(strSQL,CommandType.StoredProcedure,new SqlParameter("@WALojinID", adminLoginID));
-                if(obj!=null)
+                object obj = db.ExecuteScalar(strSQL, CommandType.StoredProcedure, new SqlParameter("@WALojinID", adminLoginID));
+                if (obj != null)
                 {
                     string count = Convert.ToString(obj);
-                    if(count.Trim()==this.textBox2.Text.Trim())
+                    if (count.Trim() == this.textBox2.Text.Trim())
                     {
                         isValid = true;
                     }
                 }
-                if(isValid)
+                if (isValid)
                 {
                     FrmSelectAdmin f = new FrmSelectAdmin();
                     this.Hide();
@@ -76,9 +76,10 @@ namespace Warehouse
                 {
                     MessageBox.Show("您输入的用户名或密码不正确！");
                 }
+            }
                 if (comboBox1.Text.Trim() == "供应商")
                 {
-                    strSQL = "select * from Supplier where  SpLoginID=@SpLoginID";
+                    string strSQL = "select * from Supplier where  SpLoginID=@SpLoginID";
                     using (SqlConnection con = new SqlConnection(strCon))
                     {
                         con.Open();
@@ -94,7 +95,7 @@ namespace Warehouse
                         if (pw == textBox2.Text.Trim())
                         {
                             MessageBox.Show("登录成功！");
-                            FrmSupplier f = new Warehouse.FrmSupplier(id);
+                            FrmSupplier f = new FrmSupplier(id);
                             this.Hide();
                             f.ShowDialog();
                             this.Show();
@@ -106,7 +107,7 @@ namespace Warehouse
                         }
                         con.Close();
                     }
-                }
+               
             }
         }
 
