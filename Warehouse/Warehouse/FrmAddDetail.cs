@@ -25,7 +25,7 @@ namespace Warehouse
         /// <param name="e"></param>
         private void FrmAddDetail_Load(object sender, EventArgs e)
         {
-            string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
+            string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
             string strSQL = "select GdName,PcDate,PDCount,PDID from PurchaseDetail p inner join Goods c on p.GdID=c.GdID inner join Purchase u on p.RID=u.RID";
 
             using (SqlConnection con = new SqlConnection(strCon))
