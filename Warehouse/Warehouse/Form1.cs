@@ -131,6 +131,35 @@ namespace Warehouse
                     }
                
             }
+            if (this.comboBox1.Text == "店员")
+            {
+                string strSQL = "select count(*) from Clerk where ClLoginID=@ClLoginID and ClLoginPwd=@ClLoginPwd";
+                using (SqlConnection con = new SqlConnection(strCon))
+                {
+                    SqlCommand cmd = new SqlCommand(strSQL, con);
+                    cmd.Parameters.AddWithValue("@ClLoginID", this.textBox1.Text);
+                    cmd.Parameters.AddWithValue("@ClLoginPwd", this.textBox2.Text);
+                    con.Open();
+                    object obj = cmd.ExecuteScalar();
+                    if (obj != null)
+                    {
+                        int count = Convert.ToInt32(obj);
+                        if (count == 1)
+                        {
+                            this.textBox2.Text = "";
+                            FrmShop f = new FrmShop(this.textBox1.Text);
+                            this.Hide();
+                            f.ShowDialog();
+                            this.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("账号密码错误！", "", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    con.Close();
+                }
+            }
         }
 
         private void 注册供应商ToolStripMenuItem_Click(object sender, EventArgs e)
