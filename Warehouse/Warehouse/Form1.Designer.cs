@@ -133,6 +133,7 @@
             this.注册店员ToolStripMenuItem.Name = "注册店员ToolStripMenuItem";
             this.注册店员ToolStripMenuItem.Size = new System.Drawing.Size(189, 26);
             this.注册店员ToolStripMenuItem.Text = "注册店员";
+            this.注册店员ToolStripMenuItem.Click += new System.EventHandler(this.注册店员ToolStripMenuItem_Click);
             // 
             // 注册供应商ToolStripMenuItem
             // 

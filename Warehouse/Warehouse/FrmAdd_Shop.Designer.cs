@@ -46,72 +46,81 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 36);
+            this.label1.Location = new System.Drawing.Point(40, 45);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(65, 12);
+            this.label1.Size = new System.Drawing.Size(82, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "店面名称：";
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(110, 27);
+            this.txtName.Location = new System.Drawing.Point(147, 34);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(139, 21);
+            this.txtName.Size = new System.Drawing.Size(184, 25);
             this.txtName.TabIndex = 1;
             // 
             // txtAddress
             // 
-            this.txtAddress.Location = new System.Drawing.Point(110, 87);
+            this.txtAddress.Location = new System.Drawing.Point(147, 109);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(139, 21);
+            this.txtAddress.Size = new System.Drawing.Size(184, 25);
             this.txtAddress.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 96);
+            this.label2.Location = new System.Drawing.Point(40, 120);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 12);
+            this.label2.Size = new System.Drawing.Size(82, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "店面地址：";
             // 
             // txtManagerName
             // 
-            this.txtManagerName.Location = new System.Drawing.Point(110, 142);
+            this.txtManagerName.Location = new System.Drawing.Point(147, 178);
+            this.txtManagerName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtManagerName.Name = "txtManagerName";
-            this.txtManagerName.Size = new System.Drawing.Size(139, 21);
+            this.txtManagerName.Size = new System.Drawing.Size(184, 25);
             this.txtManagerName.TabIndex = 5;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 151);
+            this.label3.Location = new System.Drawing.Point(40, 189);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(65, 12);
+            this.label3.Size = new System.Drawing.Size(82, 15);
             this.label3.TabIndex = 4;
             this.label3.Text = "店长姓名：";
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(110, 198);
+            this.txtPhone.Location = new System.Drawing.Point(147, 248);
+            this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(139, 21);
+            this.txtPhone.Size = new System.Drawing.Size(184, 25);
             this.txtPhone.TabIndex = 7;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 207);
+            this.label4.Location = new System.Drawing.Point(40, 259);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 12);
+            this.label4.Size = new System.Drawing.Size(82, 15);
             this.label4.TabIndex = 6;
             this.label4.Text = "联系电话：";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(32, 260);
+            this.button1.Location = new System.Drawing.Point(43, 325);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 29);
             this.button1.TabIndex = 8;
             this.button1.Text = "确认";
             this.button1.UseVisualStyleBackColor = true;
@@ -119,9 +128,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(174, 260);
+            this.button2.Location = new System.Drawing.Point(232, 325);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(100, 29);
             this.button2.TabIndex = 9;
             this.button2.Text = "取消";
             this.button2.UseVisualStyleBackColor = true;
@@ -133,9 +143,9 @@
             // 
             // FrmAdd_Shop
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 304);
+            this.ClientSize = new System.Drawing.Size(379, 380);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtPhone);
@@ -146,8 +156,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmAdd_Shop";
             this.Text = "添加新店面";
+            this.Load += new System.EventHandler(this.FrmAdd_Shop_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

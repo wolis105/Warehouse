@@ -178,9 +178,21 @@ namespace Warehouse
             this.Show();
         }
 
+        private void 注册店员ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmAdd_Clerk1 f = new FrmAdd_Clerk1();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
+        }
+
         private void 添加新店面信息ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmAdd_Shop f = new FrmAdd_Shop();
+            this.Hide();
+            f.ShowDialog();
+            this.Show();
         }
+       
     }
 }

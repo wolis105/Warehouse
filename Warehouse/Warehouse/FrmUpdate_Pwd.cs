@@ -39,13 +39,13 @@ namespace Warehouse
             }
             else
             {
-                string strSQL = "select count(*) from Clerk where CILojinID=@CILojinID and CIPassword=@CIPassword";
+                string strSQL = "select count(*) from Clerk where ClLoginID=@ClLoginID and ClLoginPwd=@ClLoginPwd";
                 object obj = null;
                 using (SqlConnection con = new SqlConnection(strCon))
                 {
                     SqlCommand cmd = new SqlCommand(strSQL, con);
-                    cmd.Parameters.AddWithValue("@CILojinID", id);
-                    cmd.Parameters.AddWithValue("@CIPassword", this.txtOld.Text);
+                    cmd.Parameters.AddWithValue("@ClLoginID", id);
+                    cmd.Parameters.AddWithValue("@ClLoginPwd", this.txtOld.Text);
                     con.Open();
                     obj = cmd.ExecuteScalar();
                     if (obj != null)
@@ -82,17 +82,14 @@ namespace Warehouse
                                         DialogResult dr = MessageBox.Show("是否确认修改？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
                                         if (dr == DialogResult.OK)
                                         {
-                                            string strSQL2 = "update Clerk set CIPassword=@CIPassword where CILojinID=@CILojinID";
+                                            string strSQL2 = "update Clerk set ClLoginPwd=@ClLoginPwd where ClLoginID=@ClLoginID";
                                             SqlCommand cmd1 = new SqlCommand(strSQL2, con);
-                                            cmd1.Parameters.AddWithValue("@CILojinID", id);
-                                            cmd1.Parameters.AddWithValue("@CIPassword", this.txtNew.Text);
+                                            cmd1.Parameters.AddWithValue("@ClLoginID", id);
+                                            cmd1.Parameters.AddWithValue("@ClLoginPwd", this.txtNew.Text);
                                             object obj1 = cmd1.ExecuteNonQuery();
                                             if (obj1 != null)
                                             {
                                                 int count1 = Convert.ToInt32(obj1);
-                                                MessageBox.Show(count1.ToString());
-                                                MessageBox.Show(this.txtNew.Text);
-                                                MessageBox.Show(id);
                                                 if (count1 == 1)
                                                 {
                                                     MessageBox.Show("修改成功！");

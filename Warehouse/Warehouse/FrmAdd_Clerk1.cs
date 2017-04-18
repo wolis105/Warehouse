@@ -27,9 +27,9 @@ namespace Warehouse
                 this.errorProvider1.SetError(this.txtName,"姓名不能为空！");
                 return;
             }
-            if (this.txtSex.Text.Trim() == "")
+            if (this.cboSex.Text.Trim() == "")
             {
-                this.errorProvider1.SetError(this.txtSex, "性别不能为空！");
+                this.errorProvider1.SetError(this.cboSex, "未选择性别！");
                 return;
             }
             if (this.txtIdentity.Text.Trim().Length != 18)
@@ -52,7 +52,7 @@ namespace Warehouse
             }
 
             string clName = this.txtName.Text.Trim();
-            string clSex = this.txtSex.Text.Trim();
+            string clSex = this.cboSex.Text.Trim();
             string clIdentity = this.txtIdentity.Text.Trim();
             string clPhone = this.txtPhone.Text.Trim()==""?("未填写"):(this.txtPhone.Text.Trim());
             string shName = this.cboShName.Text.Trim();
