@@ -20,7 +20,7 @@ namespace Warehouse
 
         private string str = null;
 
-        private string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
+        private string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
         private bool flag = false;
         private bool flag1 = false;
 
@@ -82,8 +82,6 @@ namespace Warehouse
                     {
                         int pDCount = reader.IsDBNull(0) ? 0 : reader.GetInt32(0);
                         int dlCount = reader.IsDBNull(1) ? 0 : reader.GetInt32(1);
-                        MessageBox.Show(dlCount +"     " + pDCount);
-                        MessageBox.Show((dlCount - pDCount).ToString());
                         if (Convert.ToInt32(number) > dlCount - pDCount)
                         {
                             MessageBox.Show($"货物供应不足,请联系供应商！！剩余{dlCount - pDCount}");

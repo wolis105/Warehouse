@@ -34,7 +34,7 @@ namespace Warehouse
 
         private void FrmAddLook_Load(object sender, EventArgs e)
         {
-            string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
+            string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
             string strSQL = "select sum(PDCount) from PurchaseDetail where GdID=(select GdID from Goods where GdName=@GdName)";
 
             using (SqlConnection con = new SqlConnection(strCon))

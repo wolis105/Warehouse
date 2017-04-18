@@ -18,7 +18,7 @@ namespace Warehouse
             InitializeComponent();
         }
 
-        private string strCon = "server=DEEP-20161031LT;database=Warehouse_New;uid=sa;password=123;";
+        private string strCon = "server=SC-201608292202;database=Warehouse_New;uid=sa;password=123;";
 
         private void listView1_DoubleClick(object sender, EventArgs e)
         {
@@ -40,24 +40,11 @@ namespace Warehouse
 
         private void FrmGoodsSelect_Load(object sender, EventArgs e)
         {
-            //string strSQL = "select GdName,GdType,GdSpecification,GdUnit,sum(DlCount) from Goods g"
-            //              + " left join Deliver d on g.GdID=d.GdID"
-            //              + " group by GdName,GdType,GdSpecification,GdUnit"
-            //              + " union"
-            //              + " select GdName,GdType,GdSpecification,GdUnit,sum(PDCount) from Goods g"
-            //              + " left join PurchaseDetail p on g.GdID = p.GdID"
-            //              + " group by GdName,GdType,GdSpecification,GdUnit";
-
-            string strSQL = "select GdName,GdType,GdSpecification,GdUnit,sum(DlCount)"
-                          +" from Goods g"
-                          +" left join Deliver d on g.GdID = d.GdID"
-                          +" group by GdName,GdType,GdSpecification,GdUnit,d.GdID";
-
-            
-//select GdName,GdType,GdSpecification,GdUnit,sum(DlCount),sum(PDCount) from Goods g 
-// left join Deliver d on g.GdID=d.GdID
-// left join PurchaseDetail p on g.GdID=p.GdID
-//  group by GdName,GdType,GdSpecification,GdUnit
+            string strSQL ="select GdName,GdType,GdSpecification,GdUnit,sum(DlCount)/count(distinct PDID),sum(PDCount)/count(distinct DlID) from Goods g "
+                         +"left join Deliver d on g.GdID=d.GdID "
+                         +"left join PurchaseDetail p on g.GdID=p.GdID "
+                         +"group by GdName,GdType,GdSpecification,GdUnit";
+           
 
             using (SqlConnection con = new SqlConnection(strCon))
             {
@@ -73,12 +60,13 @@ namespace Warehouse
                     string gdSpecification = reader.GetString(reader.GetOrdinal("GdSpecification"));
                     string gdUnit = reader.GetString(reader.GetOrdinal("GdUnit"));
                     int dlCount = reader.IsDBNull(4) ? 0 : reader.GetInt32(4);
+                    int pDCount = reader.IsDBNull(5) ? 0 : reader.GetInt32(5);
 
                     ListViewItem item = new ListViewItem(gdName);
                     item.SubItems.Add(gdType);
                     item.SubItems.Add(gdSpecification);
                     item.SubItems.Add(gdUnit);
-                    item.SubItems.Add(dlCount  == 0 ? "0" : dlCount  .ToString());
+                    item.SubItems.Add(dlCount - pDCount == 0 ? "0" : (dlCount- pDCount).ToString());
 
                     this.listView1.Items.Add(item);
                 }
