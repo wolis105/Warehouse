@@ -119,6 +119,7 @@ namespace Warehouse
             this.Hide();
             f.ShowDialog();
             this.Show();
+            this.btnOK.PerformClick();
         }
     }
 }

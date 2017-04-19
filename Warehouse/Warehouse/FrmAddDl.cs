@@ -36,10 +36,8 @@ namespace Warehouse
                 while (reader.Read())
                 {
                     string name = reader.GetString(reader.GetOrdinal("GdName"));
-                     id = reader.GetString(reader.GetOrdinal("GdID"));
                     comboBox1.Items.Add(name);
                 }
-                comboBox1.Enabled = false;
                 reader.Close();
                 con.Close();
             }
@@ -50,6 +48,7 @@ namespace Warehouse
             string guid = Guid.NewGuid().ToString();
             string name = comboBox1.Text.Trim();
             int count = Convert.ToInt32(textBox1.Text.Trim());
+           
             if (string.IsNullOrWhiteSpace(name))
             {
                 errorProvider1.SetError(comboBox1, "不能为空");
@@ -60,7 +59,22 @@ namespace Warehouse
                 errorProvider1.SetError(textBox1, "不能为空");
                 return;
             }
-            string strSQL = "insert into Goods(DlID,DlCount,SpID,GdID) values (@DlID,@DlCount,@SpID,@GdID)";
+            string strSQL = "select * from Goods where GdName=@GdName";
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                cmd.Parameters.AddWithValue("@GdName", name);
+                SqlDataReader reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    id = reader.GetString(reader.GetOrdinal("GdID"));
+                }
+
+                con.Close();
+            }
+
+            strSQL = "insert into Deliver(DlID,DlCount,SpID,GdID) values (@DlID,@DlCount,@SpID,@GdID)";
             using (SqlConnection con = new SqlConnection(strCon))
             {
                 con.Open();
@@ -83,6 +97,11 @@ namespace Warehouse
 
                 con.Close();
             }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

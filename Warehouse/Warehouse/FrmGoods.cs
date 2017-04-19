@@ -87,7 +87,7 @@ namespace Warehouse
                this.Hide();
                 f.ShowDialog();
                 this.Show();
-
+                this.btnSelect.PerformClick();
             }
            
         }
@@ -104,6 +104,7 @@ namespace Warehouse
                     this.Hide();
                     f.ShowDialog();
                     this.Show();
+                    this.btnSelect.PerformClick();
                 }
             }
         }

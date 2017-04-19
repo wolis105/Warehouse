@@ -41,9 +41,10 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(39, 261);
+            this.button1.Location = new System.Drawing.Point(29, 209);
+            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 40);
+            this.button1.Size = new System.Drawing.Size(86, 32);
             this.button1.TabIndex = 0;
             this.button1.Text = "确定";
             this.button1.UseVisualStyleBackColor = true;
@@ -51,44 +52,50 @@
             // 
             // btnClose
             // 
-            this.btnClose.Location = new System.Drawing.Point(180, 261);
+            this.btnClose.Location = new System.Drawing.Point(135, 209);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(114, 40);
+            this.btnClose.Size = new System.Drawing.Size(86, 32);
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "关闭";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 68);
+            this.label1.Location = new System.Drawing.Point(27, 54);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(82, 15);
+            this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 2;
             this.label1.Text = "商品名字：";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(36, 116);
+            this.label2.Location = new System.Drawing.Point(27, 93);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 15);
+            this.label2.Size = new System.Drawing.Size(65, 12);
             this.label2.TabIndex = 3;
             this.label2.Text = "商品数量：";
             // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(111, 65);
+            this.comboBox1.Location = new System.Drawing.Point(83, 52);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(138, 23);
+            this.comboBox1.Size = new System.Drawing.Size(104, 20);
             this.comboBox1.TabIndex = 4;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(111, 113);
+            this.textBox1.Location = new System.Drawing.Point(83, 90);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(138, 25);
+            this.textBox1.Size = new System.Drawing.Size(104, 21);
             this.textBox1.TabIndex = 5;
             // 
             // errorProvider1
@@ -97,15 +104,16 @@
             // 
             // FrmAddDl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(342, 346);
+            this.ClientSize = new System.Drawing.Size(256, 277);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.button1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmAddDl";
             this.Text = "添加送货单";
             this.Load += new System.EventHandler(this.FrmAddDl_Load);
