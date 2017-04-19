@@ -90,13 +90,16 @@ namespace Warehouse
                     ceName = reader.GetString(reader.GetOrdinal("CeName"));
                 }
                 reader.Close();
-                ListViewItem item = new ListViewItem(listType);
-                item.SubItems.Add(gdName);
-                item.SubItems.Add(gdNumber);
-                item.SubItems.Add(dateList);
-                item.SubItems.Add(whName);
-                item.SubItems.Add(ceName);
-                this.lvShow.Items.Add(item);
+                if (gdName != null)
+                {
+                    ListViewItem item = new ListViewItem(listType);
+                    item.SubItems.Add(gdName);
+                    item.SubItems.Add(gdNumber);
+                    item.SubItems.Add(dateList);
+                    item.SubItems.Add(whName);
+                    item.SubItems.Add(ceName);
+                    this.lvShow.Items.Add(item); 
+                }
                 con.Close();
             }
         }
@@ -118,13 +121,16 @@ namespace Warehouse
                     whName = reader.GetString(reader.GetOrdinal("WhName"));
                 }
                 reader.Close();
-                ListViewItem item = new ListViewItem(listType);
-                item.SubItems.Add(gdName);
-                item.SubItems.Add(gdNumber);
-                item.SubItems.Add(dateList);
-                item.SubItems.Add(whName);
-                item.SubItems.Add(ceName);
-                this.lvShow.Items.Add(item);
+                if (gdName!=null)
+                {
+                    ListViewItem item = new ListViewItem(listType);
+                    item.SubItems.Add(gdName);
+                    item.SubItems.Add(gdNumber);
+                    item.SubItems.Add(dateList);
+                    item.SubItems.Add(whName);
+                    item.SubItems.Add(ceName);
+                    this.lvShow.Items.Add(item); 
+                }
                 con.Close();
             }
         }
