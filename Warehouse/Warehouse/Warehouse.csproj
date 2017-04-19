@@ -407,6 +407,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="项目工具\团队作业SQL.sql" />
+    <Content Include="项目工具\项目心得--童旭.txt" />
+    <Content Include="项目工具\项目心得-屠建伟.txt" />
+    <Content Include="项目工具\项目心得-李林.txt" />
+    <Content Include="项目工具\项目心得-李泽昇.txt" />
+    <Content Include="项目工具\项目心得-王雅林.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
