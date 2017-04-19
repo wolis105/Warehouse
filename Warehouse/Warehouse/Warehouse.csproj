@@ -400,15 +400,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="项目工具\项目ER图.DM1" />
+    <None Include="项目工具\Model1.DM1" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="项目工具\SQLQuery存储过程.sql" />
-    <Content Include="项目工具\LL.sql" />
-    <Content Include="项目工具\仓库.sql" />
     <Content Include="项目工具\团队作业SQL.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
