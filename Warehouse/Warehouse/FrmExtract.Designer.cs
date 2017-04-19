@@ -61,7 +61,6 @@
             this.cboGdName.Name = "cboGdName";
             this.cboGdName.Size = new System.Drawing.Size(200, 20);
             this.cboGdName.TabIndex = 5;
-            this.cboGdName.TextChanged += new System.EventHandler(this.cboGdName_TextChanged);
             // 
             // btnExtract
             // 

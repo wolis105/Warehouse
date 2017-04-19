@@ -41,6 +41,37 @@ namespace Warehouse
 
                 con.Close();
             }
+            strSQL = "select ShName from Shop";
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string gdName = reader.GetString(reader.GetOrdinal("ShName"));
+                    this.cboShName.Items.Add(gdName);
+                }
+                reader.Close();
+
+                con.Close();
+            }
+            strSQL = "select WhName from Warehouse";
+            using (SqlConnection con = new SqlConnection(strCon))
+            {
+                SqlCommand cmd = new SqlCommand(strSQL, con);
+                con.Open();
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    string gdName = reader.GetString(reader.GetOrdinal("WhName"));
+                    this.cboWhName.Items.Add(gdName);
+                }
+                reader.Close();
+
+                con.Close();
+            }
+
         }
 
         private void btnExtract_Click(object sender, EventArgs e)
@@ -167,54 +198,7 @@ namespace Warehouse
 
         private void cboGdName_TextChanged(object sender, EventArgs e)
         {
-            this.cboShName.Items.Clear();
-            string strSQL = "sp_SelectOne";
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
-                con.Open();
 
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string shName = reader.GetString(reader.GetOrdinal("ShName"));
-
-                    //cboShName.Text = shName;
-                    cboShName.Items.Add(shName);
-                }
-                if (cboShName.Items != null)
-                {
-                    cboShName.Text = cboShName.Items[0].ToString();
-                }
-                reader.Close();
-                con.Close();
-            }
-            this.cboWhName.Items.Clear();
-            strSQL = "sp_SelectOnly";
-            using (SqlConnection con = new SqlConnection(strCon))
-            {
-                SqlCommand cmd = new SqlCommand(strSQL, con);
-                cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@GdName", this.cboGdName.Text.Trim());
-                con.Open();
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    string whName = reader.GetString(reader.GetOrdinal("WhName"));
-
-                    //cboWhName.Text= whName;
-                    cboWhName.Items.Add(whName);
-                }
-                if (cboWhName.Items != null)
-                {
-                    cboWhName.Text = cboWhName.Items[0].ToString();
-                }
-                reader.Close();
-                con.Close();
-            }
         }
     }
 }

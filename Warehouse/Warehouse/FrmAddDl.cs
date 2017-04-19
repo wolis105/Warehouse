@@ -48,7 +48,7 @@ namespace Warehouse
             string guid = Guid.NewGuid().ToString();
             string name = comboBox1.Text.Trim();
             int count = Convert.ToInt32(textBox1.Text.Trim());
-           
+
             if (string.IsNullOrWhiteSpace(name))
             {
                 errorProvider1.SetError(comboBox1, "不能为空");
