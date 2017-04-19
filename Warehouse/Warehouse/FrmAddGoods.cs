@@ -129,5 +129,10 @@ namespace Warehouse
                 con.Close();
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
