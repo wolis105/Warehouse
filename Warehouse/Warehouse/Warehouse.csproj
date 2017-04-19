@@ -401,6 +401,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="项目工具\Model1.DM1" />
+    <None Include="项目工具\仓库管理系统.pptx" />
+    <None Include="项目工具\软件需求说明书-修正版.doc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
