@@ -402,6 +402,7 @@
     </Compile>
     <None Include="项目工具\Model1.DM1" />
     <None Include="项目工具\仓库管理系统.pptx" />
+    <None Include="项目工具\屠建伟组-分工表.xlsx" />
     <None Include="项目工具\软件需求说明书-修正版.doc" />
   </ItemGroup>
   <ItemGroup>
@@ -413,6 +414,7 @@
     <Content Include="项目工具\项目心得-屠建伟.txt" />
     <Content Include="项目工具\项目心得-李林.txt" />
     <Content Include="项目工具\项目心得-李泽昇.txt" />
+    <Content Include="项目工具\项目心得-王乾康.txt" />
     <Content Include="项目工具\项目心得-王雅林.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
